@@ -53,7 +53,6 @@ def update():
     if ball.colliderect(bat):
         sounds.blip.play()
         vy = -abs(vy)
-
         # Speed up!
         speed_up = 1.05
         vy = vy * speed_up
