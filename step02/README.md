@@ -4,7 +4,7 @@
 ```
 bat = Rect(WIDTH / 2, 0.96 * HEIGHT, 120, 15)
 ```
-Intially positioned to be halfway across the screen, near the bottom.
+Intially positioned to be halfway across the screen, near the bottom.   
 2. Modify the draw function to also draw the bat
 ```
  screen.draw.filled_rect(bat, RED)
