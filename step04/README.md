@@ -1,4 +1,4 @@
-# breakout - check if the player has won or lost
+# Step 4  - check if the player has won or lost
 
 1. If there are not blocks left then the player has won.   
 In the update function, before the final ball.velocity setting, add this code

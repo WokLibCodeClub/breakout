@@ -1,4 +1,4 @@
-# step 3 - Lets build the blocks - and remove them when hit
+# Step 3 - Lets build the blocks - and remove them when hit
 
 1. Create a new array variable (place it after the bat variable)
 ```
