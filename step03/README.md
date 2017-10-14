@@ -4,7 +4,7 @@
 ```
 blocks = []
 ```
-2. Now we need to fill this array with blocks, each block will have an x postion, x position, height and width.   
+2. Now we need to fill this array with blocks, each block will have an x postion, y position, height and width.   
 We will have 3 rows of 8. So we have a loop to create the rows and within this a loop to create the actual blocks.
 The array object has a function to add entries to it called 'append'
 ```
