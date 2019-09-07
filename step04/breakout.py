@@ -15,7 +15,7 @@ ball = ZRect(WIDTH / 2, HEIGHT / 2, 30, 30)
 ball.velocity = 5, -5
 
 bat = Rect(WIDTH / 2, 0.96 * HEIGHT, 120, 15)
-
+ 
 blocks = []
 for block_y in range(3):
     for block_x in range(8):
@@ -53,7 +53,6 @@ def update():
     if ball.colliderect(bat):
         sounds.blip.play()
         vy = -abs(vy)
-
         # Speed up!
         speed_up = 1.05
         vy = vy * speed_up
@@ -65,15 +64,5 @@ def update():
         sounds.block.play()
         vy = abs(vy)
         blocks.pop(to_kill)
-
-    if not blocks:
-        sounds.win.play()
-        print("Winner!")
-        exit()
-
-    if ball.top > HEIGHT:
-        sounds.die.play()
-        print("Loser!")
-        exit()
 
     ball.velocity = vx, vy

@@ -3,7 +3,7 @@
 ## Licensed under MIT License - see file COPYING
 
 TITLE = 'Breakout'
-WIDTH = 804
+WIDTH = 800
 HEIGHT = 600
 
 RED = 200, 0, 0
@@ -14,7 +14,7 @@ GOLD = 205, 145, 0
 ball = ZRect(WIDTH / 2, HEIGHT / 2, 30, 30)
 ball.velocity = 5, -5
 
-bat = Rect(WIDTH / 2, 0.96 * HEIGHT, 120, 15)
+bat = Rect(WIDTH / 2, 0.9 * HEIGHT, 120, 15)
 
 def on_mouse_move(pos):
     x, y = pos

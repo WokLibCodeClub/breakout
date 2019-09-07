@@ -3,6 +3,7 @@
 1. Create a new folder called breakout to hold your code.
 
 2. Navigate the terminal window to this new folder.
+
    (If you are using VS Code as your editor the easiest way to do this is to go to File>Open Folder, and select your new folder. By doing that you will ensure the Terminal opens in the right folder.)
 
 3. Using your Python editor create a new empty file and save it as breakout.py
@@ -70,4 +71,4 @@ Change the position of the ball so it appears in the top left quarter of the win
 
 [Go to step 2](../step02-bat_and_movement)
 
-Explanation of ```ZRect()```: Pygame Zero also has a function called ```Rect()``` for creating rectangle objects. The difference between this and ```ZRect()``` is that the coordinates of a ```Rect()``` object can only be whole numbers. A ```ZRect()``` object allows coordinates which are decimal numbers. In the code above the x coordinate of **ball** is specified as WIDTH/2, so if WIDTH happens to be an odd number this will generate a decimal coordinate, so we have to make **ball** using ```ZRect()``` to avoid an error. The bat created in step 2 uses a ```Rect()``` object.
+Object type ```ZRect()```: Pygame Zero also has a function called ```Rect()``` for creating rectangle objects. The difference between this and ```ZRect()``` is that ZRect objects have additional properties, including one called *velocity* which we will need for this game. For this reason the variable **ball** needs to be of type ```ZRect()``` not type ```Rect()```.
