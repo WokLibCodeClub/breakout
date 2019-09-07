@@ -24,11 +24,11 @@ If you've followed the instructions in Step 1 your code should look like the cod
 
    In your code before function draw() define a new function called **on_mouse_move()**. This is a special Pygame Zero function which constantly checks the position of the mouse pointer in the game window, and puts the position in a variable called **pos**.
 
-   Because two coordinates are needed to show the position of the mouse pointer (x coordinate and y coordinate) the variable **pos** will be a *tuple* type of variable with two values. But in breakout the bat only moves from side to side, not up and down, so we only need the mouse x coordinate to control the bat. We need a way to extract the different values from the tuple variable **pos**. Python does this using this code:
+   Because two coordinates are needed to show the position of the mouse pointer (x coordinate and y coordinate) the variable **pos** will be a *tuple* type of variable with two values. But in Breakout the bat only moves from side to side, not up and down, so we only need the mouse x coordinate to control the bat. We need a way to extract the different values from the tuple variable **pos**. Python does this using this code:
    ```
     x, y = pos
    ```
-   This creates two new variables called **x** and **y** and puts the first value of **pos** into **x** (this will be the mouse pointer's x coordinate) and the second value of **pos** into **y** (this will be the mouse pointer's y coordinate). We want the x coordinate of the bat rectangle to be the same as the x coordinate of the mouse pointer - this equal our new variable **x**. 
+   This creates two new variables called **x** and **y** and puts the first value of **pos** into **x** (this will be the mouse pointer's x coordinate) and the second value of **pos** into **y** (this will be the mouse pointer's y coordinate). We want the x coordinate of the bat rectangle to be the same as the x coordinate of the mouse pointer - this will equal our new variable **x**. 
 
    Pygame Zero has a special command for setting the x coordinate of the bat to variable **x**:
    ```

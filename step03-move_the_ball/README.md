@@ -1,6 +1,6 @@
 # Step 3 - Get the ball moving
 
-If you've followed the instructions in Step 2 your code should look like the code in breakout2.py on this page.
+If you've followed the instructions in Step 2 your code should look like the code in breakout2.py on this page. Note that there are comments added to show which parts of the code do which task. This is a very good thing to do in your Python coding.
 
 1. Add a velocity property to the ball
 
@@ -66,4 +66,4 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
    Remember, we don't need to stop the ball going off the bottom of the window - in Breakout you lose a life if the ball goes off the bottom.
 
-[Go to step 4](../step04-add_sounds)
+[Go to step 4](../step04-bat_on_ball)
