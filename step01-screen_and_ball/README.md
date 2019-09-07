@@ -3,9 +3,7 @@
 1. Create a new folder called breakout to hold your code.
 
 2. Navigate the terminal window to this new folder.
-(If you are using VS Code as your editor the easiest way to do this is to go to
-File>Open Folder, and select your new folder. By doing that you will ensure the 
-Terminal opens in the right folder.)
+   (If you are using VS Code as your editor the easiest way to do this is to go to File>Open Folder, and select your new folder. By doing that you will ensure the Terminal opens in the right folder.)
 
 3. Using your Python editor create a new empty file and save it as breakout.py
 
