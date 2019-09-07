@@ -24,33 +24,33 @@
 
    We are going to make some variables for the project. The first three are variables of a type called *tuples* which have a sequence of values, with the values separated by commas.
 
-```
+   ```
    RED = (200, 0, 0)
    WHITE = (200, 200, 200)
    GOLD = (205, 145, 0)
-```
+   ```
    We have given these variables the names of colours, but to Python they are simply sequences of numbers. Later on we will use these variables in Python instructions where the numbers will become the amounts of the colours red, green and blue which can be mixed together to form any colour.
 
    The next variable is of a type called an *object*, in fact it is a Rectangle object. The function to make this rectangle object is ```ZRect()```. We will call the variable **ball**. When we create the rectangle object we have to specify the coordinates of the position of the rectangle, measured in pixels, and how big the rectangle is, also measured in pixels.
-```
-ball = ZRect(WIDTH/2, HEIGHT/2, 30, 30)
-```
-**Note** ```ZRect``` is *not* a standard Python function, so some Python editors (especially VS Code) might show an error at the word ```ZRect```. Don't worry about this. The code is correct.
+   ```
+   ball = ZRect(WIDTH/2, HEIGHT/2, 30, 30)
+   ```
+   **Note** ```ZRect``` is *not* a standard Python function, so some Python editors (especially VS Code) might show an error at the word ```ZRect```. Don't worry about this. The code is correct.
 
-The first two items in the brackets after ZRect give the x and y coordinates where the ball will be located, the next two items give the width and height of the ball.
+   The first two items in the brackets after ZRect give the x and y coordinates where the ball will be located, the next two items give the width and height of the ball.
 
-The x coordinate of the ball is WIDTH/2, and the y coordinate is HEIGHT/2. Where on the screen do you think the ball will be placed with these values?
+   The x coordinate of the ball is WIDTH/2, and the y coordinate is HEIGHT/2. Where on the screen do you think the ball will be placed with these values?
 
-If you save your code and run it now you won't see a ball. That's because we need to write the code to *draw* the ball on the screen.
+   If you save your code and run it now you won't see a ball. That's because we need to write the code to *draw* the ball on the screen.
 
 6. Write function **draw()**
 
    Pygame Zero looks for a function called draw() when it runs code. It runs this function over and over again, 60 times a second.    To write the draw function add this
-```  
+   ```  
    def draw():
        screen.clear()
        screen.draw.filled_rect(ball, WHITE)
-```
+   ```
    **Note** ```screen``` is *not* a standard Python function, so some Python editors (especially VS Code) might show an error at the word ```screen```. Don't worry about this. The code is correct.
 
    Inside the draw function are two other functions: the first will clear the screen, and the second will draw on the screen.
@@ -59,7 +59,7 @@ If you save your code and run it now you won't see a ball. That's because we nee
 
 7. Save your code and test it with ```pgzrun breakout.py``` in the terminal window.
 
-Did the code do what you expected?
+   Did the code do what you expected?
 
 Challenge:
 ==========
