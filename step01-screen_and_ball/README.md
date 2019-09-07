@@ -10,6 +10,7 @@ Terminal opens in the right folder.)
 3. Using your Python editor create a new empty file and save it as breakout.py
 
 4. Set up the game window
+
 The first steps are to specify the size of the game window. You can also give it a title. When run with Pygame Zero this code will control properties of the game window:
 
 ```
@@ -22,6 +23,7 @@ You can test your code so far by typing ```pgzrun breakout.py``` in the terminal
 **To stop the code executing click on the red cross at the top right corner of the game window.**
 
 5. Add some variables to the project
+
 We are going to make some variables for the project. The first three are variables of a type called *tuples* which have a sequence of values, with the values separated by commas.
 
 ```
@@ -44,6 +46,7 @@ The x coordinate of the ball is WIDTH/2, and the y coordinate is HEIGHT/2. Where
 If you save your code and run it now you won't see a ball. That's because we need to write the code to *draw* the ball on the screen.
 
 6. Write function **draw()**
+
 Pygame Zero looks for a function called draw() when it runs code. It runs this function over and over again, 60 times a second. To write the draw function add this
 ```  
 def draw():
@@ -57,31 +60,16 @@ Inside the draw function are two other functions: the first will clear the scree
 The second function tells Pygame Zero to draw a rectangle and fill it with colour. The items in the brackets specify where to get the details about the rectangle to draw (we get these details from our variable **ball** which is a rectangle object) and what colour to fill the rectangle with (WHITE is one of our variables created earlier - here it will be taken to mean add 200 units of red, 200 units of blue and 200 units of green together, which will make a very, very light grey). 
 
 7. Save your code and test it with ```pgzrun breakout.py``` in the terminal window.
+
 Did the code do what you expected?
 
 Challenge:
 ==========
+
 Change the size of the ball.
 
 Change the position of the ball so it appears in the top left quarter of the window.
 
 [Go to step 2](../step02-bat_and_movement)
 
-5. Now create the ball. This is of a special data type called ZRect, which is requires x and y co-ordinatees to decide where to display it on the screen and height, width parameters to set the size.
-```
-ball = ZRect(WIDTH / 2, HEIGHT / 2, 30, 30)
-```
-We then set the velocity of the ball, this is the speed and direction of the ball
-```
-ball.velocity = 5, -5
-```  
-6. Now we need to implement the draw function, this is called by the Pygame Zero framework at the start of the program to display the screen.
-```  
-def draw():
-    screen.clear()
-    screen.draw.filled_rect(ball, WHITE)
-```
-This will initially clear the screen and show the ball as white.  
-
-7. Save and test your code
-
+Explanation of ```ZRect()```: Pygame Zero also has a function called ```Rect()``` for creating rectangle objects. The difference between this and ```ZRect()``` is that the coordinates of a ```Rect()``` object can only be whole numbers. A ```ZRect()``` object allows coordinates which are decimal numbers. In the code above the x coordinate of **ball** is specified as WIDTH/2, so if WIDTH happens to be an odd number this will generate a decimal number, so we have to make **ball** using ```ZRect()``` to avoid an error. The next step uses a ```Rect()``` object.
