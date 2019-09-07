@@ -1,83 +1,69 @@
-# Step 2 - Add a bat and get it moving
+# Step 3 - Get the ball moving
 
-If you've followed the instructions in Step 1 your code should look like the code in breakout1.py on this page.
+If you've followed the instructions in Step 2 your code should look like the code in breakout2.py on this page.
 
-1. Add a variable called **bat** for the bat. This is another rectangle object, this time of type Rect.
+1. Add a velocity property to the ball
+
+   We mentioned that ZRect objects can have a property called velocity. This controls how fast the ball moves, and it is another *tuple* type of variable which has two values - how fast the ball moves in the x direction (left to right) and how fast it moves in the y direction (up and down).
+
+   Under the line of code which creates the variable ball add this line:
    ```
-   bat = Rect(WIDTH/2, 0.9 * HEIGHT, 120, 15)
-   ```
-   The x coordinate is WIDTH/2 and the y coordinate is 9/10ths of the variable HEIGHT. Where do you think this will place the bat? 
-
-   The width of the bat is 120 pixels and the height is only 15 pixels, so this will be a short wide rectangle.
-
-2. Modify the draw function to draw the bat by adding this line at the end of the draw function. **Don't forget to indent this line otherwise Python won't know it's part of the draw() function!**
-   ```
-   screen.draw.filled_rect(bat, RED)
-   ```
-   This time we have used the variable RED to specify the colour to fill the rectangle. This variable tells Pygame Zero to add 200 units of red and no blue or green, which will produce a red colour.
-
-3. Save your code and run it to check that the bat is now displayed
-
-4. We need a way to control the position of the bat. We will do this by moving the mouse.
-
-   In your code before function draw() define a new function called **on_mouse_move()**. This is a special Pygame Zero function which constantly checks the position of the mouse pointer in the game window, and puts the position in a variable called **pos**.
-
-   Because two coordinates are needed to show the position of the mouse pointer (x coordinate and y coordinate) the variable **pos** will be a *tuple* type of variable with two values. But in breakout the bat only moves from side to side, not up and down, so we only need the mouse x coordinate to control the bat. We need a way to extract the different values from the tuple variable **pos**. Python does this using this code:
-   ```
-    x, y = pos
-   ```
-   This creates two new variables called **x** and **y** and puts the first value of **pos** into **x** (this will be the mouse pointer's x coordinate) and the second value of **pos** into **y** (this will be the mouse pointer's y coordinate). We want the x coordinate of the bat rectangle to be the same as the x coordinate of the mouse pointer - this will be our new variable **x**. 
-
-   Pygame Zero has a special command for setting the x coordinate of the bat to variable **x**:
-   ```
-   bat.centerx = x
+   ball.velocity = (2,-2)
    ```
 
-   It is important to use the American spelling center here (because Pygame Zero was written by an American).
+   As you will see we will slowly ramp up the ball's velocity to make the game more difficult!
 
-   The complete function **on_mouse_move()** is
+
+2. Make a function called update()
+
+   When Pygame Zero is running it looks in the code for a function called **update()** and it runs this function just before running the function **draw()***. So the place to put all the code which changes the position of objects is in function update(). 
+
+   Add this code to create function update(). A good place for function update() is just before function draw().
+
    ```
-   def on_mouse_move(pos):
-       x, y = pos
-       bat.centerx = x
+   def update():
+       vx, vy = ball.velocity
+       ball.move_ip(vx, vy)
    ```
+   The first line of the function uses two new variables, **vx** and **vy** to hold the two values of the ball.velocity tuple. The second line moves the ball by amount **vx* in the x direction and **vy** in the y direction.
 
-5. Now test the code.
+4. Save the code and test it.
 
+5. What to do if the ball goes off the edge?
 
-6. Let's get the ball moving.  
-Create a new function called Update, this will be invoked by the framework every second. Move the ball, based on the setting of the ball's velocity.
-```
-def update():
-    vx, vy = ball.velocity
-    ball.move_ip(vx, vy)
-```
-7. Test the code, you will see that the ball immediately disappears off the screen. We need to add code to 'bounce' it off the edges.  
-```
-    if ball.right > WIDTH or ball.left <= 0:
-        vx = -vx
-```
-If the ball is at the edge of the screen left or right, then change the vx variable to be the opposite (if 5, now it will be -5), this will control the horizontal direction of the ball.  
-```
-    if ball.top <= 0:
-        vy = -vy
-```
-If the ball is at the top of the screen, the make the vertical direction negative (it will travel down the screen).   
-Now use the new vx and vy settings to change the ball's direction.  
-```
- ball.velocity = vx, vy
-```
-8. Test the code.  
-9. Now we need the ball to bounce of the bat when its hit. Add the following code to just before we setting the ball.velocity variable.  
-```
- if ball.colliderect(bat):
-        sounds.blip.play()
-        vy = -abs(vy)
+   You probably saw the ball disappear off the top of the window. How can we stop this happening?
 
-        # Speed up!
-        speed_up = 1.05
-        vy = vy * speed_up
-        vx = vx * speed_up
-```
-If the ball hits the bat then play a sound and reverse the vy value (travel upwards). Also increase the speed of the ball  
-10. Now test your code.
+   When the ball gets to the top of the window its y coordinate will be equal to zero (in Pygame Zero y coordinates start at zero at the top of the window and increase downwards). So to stop the ball disappearing we need 
+   a) an ```if``` statement to check when the ball's x coordinate becomes less than zero, and
+   b) a statement which will reverse the ball y velocity, so that instead of moving upwards it moves downwards.
+
+   Here is the code to *add* to function update() to make these things happen:
+   ```
+       if ball.top < 0:
+           vy = -vy
+
+       ball.velocity = vx, vy
+   ```
+   The first line tests if the top of the ball rectangle is at a y coordinate less than zero, the second line reverses the value of variable vy and the last line puts the new value of variable vy back into the ball's velocity property ready for the next time when the function is called.
+
+   **Be careful with the indentation!** The if statement needs to be indented because it's part of function update(). The line inside the if statement needs to be indented *twice*, once because it's inside function update() and again because it's inside the if statement.
+
+6. Reverse the x velocity if the ball goes off the sides
+
+   Now add code for two more if statements to function update, one to test if the ball goes off the left edge and one to test if the ball goes off the right edge. In both cases you will want to reverse the x velocity of the ball. Test the values of the ball properties ball.right and ball.left in your if statements.
+
+   Put the two if statements after the first if statement but before the line ball.velocity = vx, vy. Be careful to get the indentation correct.
+
+7. Testing your code
+
+   To check if your code is working make a change to the line of code where you created variable **ball**. Change it to
+   ```
+   ball = ZRect(WIDTH*0.8, HEIGHT*0.8, 30, 30)
+   ```
+   This will start the ball off a bit further to the right and lower down so you should be able to see it bounce off both the right and left edges.
+   
+   Now save your code and run it.
+
+   Remember, we don't need to stop the ball going off the bottom of the window - in Breakout you lose a life if the ball goes off the bottom.
+
+[Go to step 4](../step04-add_sounds)

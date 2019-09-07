@@ -11,7 +11,7 @@ WHITE = 200, 200, 200
 GOLD = 205, 145, 0
 
 
-ball = ZRect(WIDTH / 2, HEIGHT / 2, 30, 30)
+ball = ZRect(WIDTH*0.8, HEIGHT*0.8, 30, 30)
 ball.velocity = (2, -2)
 
 bat = Rect(WIDTH / 2, 0.9 * HEIGHT, 120, 15)
@@ -30,19 +30,14 @@ def update():
     vx, vy = ball.velocity
     ball.move_ip(vx, vy)
 
-    if ball.right > WIDTH or ball.left <= 0:
-        vx = -vx
+    if ball.top < 0:
+        vy = vy * -1
 
-    if ball.top <= 0:
-        vy = -vy
+    if ball.left < 0:
+        vx = vx * -1
 
-    if ball.colliderect(bat):
-        sounds.blip.play()
-        vy = -abs(vy)
-
-        # Speed up!
-        speed_up = 1.05
-        vy = vy * speed_up
-        vx = vx * speed_up
+    if ball.right > WIDTH:
+        vx = vx * -1
 
     ball.velocity = vx, vy
+
