@@ -55,7 +55,7 @@
 
    Inside the draw function are two other functions: the first will clear the screen, and the second will draw on the screen.
 
-   The second function tells Pygame Zero to draw a rectangle and fill it with colour. The items in the brackets specify where to get the details about the rectangle to draw (we get these details from our variable **ball** which is a rectangle object) and what colour to fill the rectangle with (WHITE is one of our variables created earlier - here it will be taken to mean add 200 units of red, 200 units of blue and 200 units of green together, which will make a very, very light grey). 
+   The second function tells Pygame Zero to draw a rectangle and fill it with colour. The items in the brackets specify where to get the details about the rectangle to draw (we get these details from our variable **ball** which is a rectangle object) and what colour to fill the rectangle with (**WHITE** is one of our variables created earlier - here it will be taken to mean add 200 units of red, 200 units of blue and 200 units of green together, which will make a very, very light grey). 
 
 7. Save your code and test it with ```pgzrun breakout.py``` in the terminal window.
 
@@ -70,4 +70,4 @@ Change the position of the ball so it appears in the top left quarter of the win
 
 [Go to step 2](../step02-bat_and_movement)
 
-Explanation of ```ZRect()```: Pygame Zero also has a function called ```Rect()``` for creating rectangle objects. The difference between this and ```ZRect()``` is that the coordinates of a ```Rect()``` object can only be whole numbers. A ```ZRect()``` object allows coordinates which are decimal numbers. In the code above the x coordinate of **ball** is specified as WIDTH/2, so if WIDTH happens to be an odd number this will generate a decimal number, so we have to make **ball** using ```ZRect()``` to avoid an error. The next step uses a ```Rect()``` object.
+Explanation of ```ZRect()```: Pygame Zero also has a function called ```Rect()``` for creating rectangle objects. The difference between this and ```ZRect()``` is that the coordinates of a ```Rect()``` object can only be whole numbers. A ```ZRect()``` object allows coordinates which are decimal numbers. In the code above the x coordinate of **ball** is specified as WIDTH/2, so if WIDTH happens to be an odd number this will generate a decimal coordinate, so we have to make **ball** using ```ZRect()``` to avoid an error. The bat created in step 2 uses a ```Rect()``` object.
