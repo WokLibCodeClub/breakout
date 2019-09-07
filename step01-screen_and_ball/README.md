@@ -12,9 +12,9 @@
    The first steps are to specify the size of the game window. You can also give it a title. When run with Pygame Zero this code will control properties of the game window:
 
 ```
-TITLE = 'Breakout'
-WIDTH = 800
-HEIGHT = 600
+   TITLE = 'Breakout'
+   WIDTH = 800
+   HEIGHT = 600
 ```
    You can test your code so far by typing ```pgzrun breakout.py``` in the terminal. It will create the window for you although it won't do anything else, yet.
 
@@ -22,16 +22,16 @@ HEIGHT = 600
 
 5. Add some variables to the project
 
-We are going to make some variables for the project. The first three are variables of a type called *tuples* which have a sequence of values, with the values separated by commas.
+   We are going to make some variables for the project. The first three are variables of a type called *tuples* which have a sequence of values, with the values separated by commas.
 
 ```
-RED = (200, 0, 0)
-WHITE = (200, 200, 200)
-GOLD = (205, 145, 0)
+   RED = (200, 0, 0)
+   WHITE = (200, 200, 200)
+   GOLD = (205, 145, 0)
 ```
-We have given these variables the names of colours, but to Python they are simply sequences of numbers. Later on we will use these variables in Python instructions where the numbers will become the amounts of the colours red, green and blue which can be mixed together to form any colour.
+   We have given these variables the names of colours, but to Python they are simply sequences of numbers. Later on we will use these variables in Python instructions where the numbers will become the amounts of the colours red, green and blue which can be mixed together to form any colour.
 
-The next variable is of a type called an *object*, in fact it is a Rectangle object. The function to make this rectangle object is ```ZRect()```. We will call the variable **ball**. When we create the rectangle object we have to specify the coordinates of the position of the rectangle, measured in pixels, and how big the rectangle is, also measured in pixels.
+   The next variable is of a type called an *object*, in fact it is a Rectangle object. The function to make this rectangle object is ```ZRect()```. We will call the variable **ball**. When we create the rectangle object we have to specify the coordinates of the position of the rectangle, measured in pixels, and how big the rectangle is, also measured in pixels.
 ```
 ball = ZRect(WIDTH/2, HEIGHT/2, 30, 30)
 ```
@@ -45,17 +45,17 @@ If you save your code and run it now you won't see a ball. That's because we nee
 
 6. Write function **draw()**
 
-Pygame Zero looks for a function called draw() when it runs code. It runs this function over and over again, 60 times a second. To write the draw function add this
+   Pygame Zero looks for a function called draw() when it runs code. It runs this function over and over again, 60 times a second.    To write the draw function add this
 ```  
-def draw():
-    screen.clear()
-    screen.draw.filled_rect(ball, WHITE)
+   def draw():
+       screen.clear()
+       screen.draw.filled_rect(ball, WHITE)
 ```
-**Note** ```screen``` is *not* a standard Python function, so some Python editors (especially VS Code) might show an error at the word ```screen```. Don't worry about this. The code is correct.
+   **Note** ```screen``` is *not* a standard Python function, so some Python editors (especially VS Code) might show an error at the word ```screen```. Don't worry about this. The code is correct.
 
-Inside the draw function are two other functions: the first will clear the screen, and the second will draw on the screen.
+   Inside the draw function are two other functions: the first will clear the screen, and the second will draw on the screen.
 
-The second function tells Pygame Zero to draw a rectangle and fill it with colour. The items in the brackets specify where to get the details about the rectangle to draw (we get these details from our variable **ball** which is a rectangle object) and what colour to fill the rectangle with (WHITE is one of our variables created earlier - here it will be taken to mean add 200 units of red, 200 units of blue and 200 units of green together, which will make a very, very light grey). 
+   The second function tells Pygame Zero to draw a rectangle and fill it with colour. The items in the brackets specify where to get the details about the rectangle to draw (we get these details from our variable **ball** which is a rectangle object) and what colour to fill the rectangle with (WHITE is one of our variables created earlier - here it will be taken to mean add 200 units of red, 200 units of blue and 200 units of green together, which will make a very, very light grey). 
 
 7. Save your code and test it with ```pgzrun breakout.py``` in the terminal window.
 
