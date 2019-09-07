@@ -10,4 +10,4 @@ To run your code you will need a terminal window - you can either use the Window
 2. Create a new directory called breakout
 3. Start following the excercises from step01
 
-[Go to step 1](./Step01-screen_and_ball)
+[Go to step 1](step01-screen_and_ball)
