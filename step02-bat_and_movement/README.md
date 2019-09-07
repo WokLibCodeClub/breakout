@@ -26,7 +26,7 @@ If you've followed the instructions in Step 1 your code should look like the cod
    ```
     x, y = pos
    ```
-   This creates two new variables called **x** and **y** and puts the first value of **pos** into **x** (this will be the mouse pointer's x coordinate) and the second value of **pos** into **y** (this will be the mouse pointer's y coordinate). We want the x coordinate of the bat rectangle to be the same as the x coordinate of the mouse pointer - this will be our new variable **x**. 
+   This creates two new variables called **x** and **y** and puts the first value of **pos** into **x** (this will be the mouse pointer's x coordinate) and the second value of **pos** into **y** (this will be the mouse pointer's y coordinate). We want the x coordinate of the bat rectangle to be the same as the x coordinate of the mouse pointer - this equal our new variable **x**. 
 
    Pygame Zero has a special command for setting the x coordinate of the bat to variable **x**:
    ```
@@ -42,6 +42,10 @@ If you've followed the instructions in Step 1 your code should look like the cod
        bat.centerx = x
    ```
 
-5. Now test the code.
+   Put this function in your code just before function draw().
+
+   Whenever you move the mouse pointer this function updates the variable **pos** and takes the x coordinate of the mouse and sets the x coordinate of the bat to be the same. Try it and see it working!
+
+5. Save and test your code.
 
 [Go to step 3](../step03-move_the_ball)
