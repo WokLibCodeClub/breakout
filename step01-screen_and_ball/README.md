@@ -1,20 +1,57 @@
 # Step 1 - Let's create the screen and display a ball
 
-1. Create a new empty file and save it as breakout.py
-2. Create a folder called sounds and download the files from here into it.
-3. Set the title, height and width of the screen.
+1. Create a new folder called breakout to hold your code.
+2. Navigate the terminal window to this new folder.
+(If you are using VS Code as your editor the easiest way to do this is to go to
+File>Open Folder, and select your new folder. By doing that you will ensure the 
+Terminal opens in the right folder)
+3. Using your Python editor create a new empty file and save it as breakout.py
+
+
+The first steps are to specify the size of the game window. You can also give it a title. When run with Pygame Zero this code will control properties of the game window:
+
 ```
 TITLE = 'Breakout'
-WIDTH = 804
+WIDTH = 800
 HEIGHT = 600
 ```
-These are variables that will not change, known as constants. Constants always have their name as uppercase.
-4. Let's create 3 further constants for colours to use later, these contain the appropriate RGB (Red,Green,Blue) values.
+You can test your code so far by typing ```pgzrun breakout.py``` in the terminal. It will create the window for you although it won't do anything else, yet.
+
+To stop the code executing click on the red cross at the top right corner of the game window.
+
+We are going to make some variables for the project. The first three are variables of a type called *tuples* which have a sequence of values, with the values separated by commas.
+
 ```
-RED = 200, 0, 0
-WHITE = 200, 200, 200
-GOLD = 205, 145, 0
+RED = (200, 0, 0)
+WHITE = (200, 200, 200)
+GOLD = (205, 145, 0)
 ```
+We have given these variables the names of colours, but to Python they are simply sequences of numbers. Later on we will use these variables in Python instructions where the numbers will become the amounts of the colours red, green and blue which can be mixed together to form any colour.
+
+The next variable is of a type called an *object*, in fact it is a Rectangle object. The function to make this rectangle object is ```ZRect()```. We will call the variable **ball**. When we create the rectangle object we have to specify the coordinates of the position of the rectangle, measured in pixels, and how big the rectangle is, also measured in pixels.
+```
+ball = ZRect(WIDTH/2, HEIGHT/2, 30, 30)
+```
+**Note** ZRect is *not* a standard Python function, so some Python editors (especially VS Code) might show an error at the word ZRect. Don't worry about this. The code is correct.
+
+The first two items in the brackets after ZRect give the x and y coordinates where the ball will be located, the next two items give the width and height of the ball.
+
+The x coordinate of the ball is WIDTH/2, and the y coordinate is HEIGHT/2. Where on the screen do you think the ball will be placed with these values?
+
+If you save your code and run it now you won't see a ball. That's because we need to write the code to *draw* the ball on the screen.
+
+Pygame Zero looks for a function called draw() when it runs code. It runs this function over and over again, 60 times a second. To write the draw function add this
+```  
+def draw():
+    screen.clear()
+    screen.draw.filled_rect(ball, WHITE)
+```
+Inside the draw function are two other functions: the first will clear the screen, and the second will draw on the screen.
+
+The second function tells Pygame Zero to draw a rectangle and fill it with colour. The items in the brackets specify where to get the details about the rectangle to draw (we get these details from our variable **ball** which is a rectangle object) and what colour to fill the rectangle with. 
+
+**Note** screen is *not* a standard Python function, so some Python editors (especially VS Code) might show an error at the word screen. Don't worry about this. The code is correct.
+
 5. Now create the ball. This is of a special data type called ZRect, which is requires x and y co-ordinatees to decide where to display it on the screen and height, width parameters to set the size.
 ```
 ball = ZRect(WIDTH / 2, HEIGHT / 2, 30, 30)
