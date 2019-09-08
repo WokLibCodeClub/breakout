@@ -4,5 +4,7 @@ The code in breakout3.py on this page shows the project so far, except you will 
 
 1. Detect a collision between bat and ball
 
+   Pygame Zero has a special function to detect when two rectangle objects collide with each other called **colliderect()**.
+
 
 [Go to step 5](../step04-add_sounds)
