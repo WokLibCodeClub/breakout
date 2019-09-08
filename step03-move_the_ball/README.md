@@ -42,7 +42,7 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
    b) a statement which will reverse the ball's y velocity, so that instead of moving upwards it moves downwards.
 
-   Here is the code to *add* to function update() to make these things happen:
+   Add the following code to function update():
    ```
        if ball.top < 0:
            vy = -vy
