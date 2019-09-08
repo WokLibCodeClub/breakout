@@ -37,7 +37,9 @@ If you've followed the instructions in Step 2 your code should look like the cod
    To see an diagram of the coordinate system in Pygame Zero projects look [here](https://github.com/WokLibCodeClub/LetterA/blob/master/Step1-display_letter/window.png)
 
    So to stop the ball disappearing we need 
+
    a) an ```if``` statement to check when the ball's x coordinate becomes less than zero, and
+
    b) a statement which will reverse the ball y velocity, so that instead of moving upwards it moves downwards.
 
    Here is the code to *add* to function update() to make these things happen:
