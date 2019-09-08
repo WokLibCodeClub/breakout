@@ -32,7 +32,7 @@
    ```
    We have given these variables the names of colours, but to Python they are simply sequences of numbers. Later on we will use these variables in Python instructions where the numbers will become the amounts of the colours red, green and blue which can be mixed together to form any colour.
 
-   The next variable is of a type called an *object*, in fact it is a Rectangle object. The function to make this rectangle object is ```Rect()```. We will call the variable **ball**. When we create the rectangle object we have to specify the coordinates of the position of the rectangle, measured in pixels, and how big the rectangle is, also measured in pixels.
+   The next variable is of a type called an *object*, in fact it is a Rectangle object. The function to make this rectangle object is ```Rect()```. We will call the variable **ball**. When we create the rectangle object we have to specify the coordinates of the top left corner of the rectangle, measured in pixels, and how big the rectangle is, also measured in pixels.
    ```
    ball = Rect(WIDTH/2, HEIGHT/2, 30, 30)
    ```

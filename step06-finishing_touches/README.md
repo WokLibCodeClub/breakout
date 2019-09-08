@@ -29,5 +29,9 @@
    We will use the die.wav sound when the player loses and the ball goes off the bottom of the window.
 
 
+2. Speeding up the ball
+
+3. Winning and Losing
+
 
 [Go to step 7](../step07-ideas_for_improvement)
