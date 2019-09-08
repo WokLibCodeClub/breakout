@@ -40,7 +40,7 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
    a) an ```if``` statement to check when the ball's x coordinate becomes less than zero, and
 
-   b) a statement which will reverse the ball y velocity, so that instead of moving upwards it moves downwards.
+   b) a statement which will reverse the ball's y velocity, so that instead of moving upwards it moves downwards.
 
    Here is the code to *add* to function update() to make these things happen:
    ```
