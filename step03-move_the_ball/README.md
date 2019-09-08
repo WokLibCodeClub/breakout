@@ -2,16 +2,13 @@
 
 If you've followed the instructions in Step 2 your code should look like the code in breakout2.py on this page. Note that there are comments added to show which parts of the code do which task. This is a very good thing to do in your Python coding.
 
-1. Add a velocity property to the ball
+1. Add variables for the initial velocity of the ball
 
-   We mentioned that ZRect objects can have a property called velocity. This controls how fast the ball moves, and it is another *tuple* type of variable which has two values - how fast the ball moves in the x direction (left to right) and how fast it moves in the y direction (up and down).
+   We need two new variables, which we could call **vx** and **vy** to set the initial velocity of the ball in the x direction and y direction. Underneath the line which creates the ball rectangle object add two lines to set the variable **vx** to a value of 2 and the variable **vy** to a value -2.
 
-   Under the line of code which creates the variable ball add this line:
-   ```
-   ball.velocity = (2,-2)
-   ```
+   If the x direction velocity is positive the ball will move to the right; if the y direction velocity is positive the ball will move downwards.
 
-   As you will see we will slowly ramp up the ball's velocity to make the game more difficult!
+   We use variables for vx and vy because, as you will see later, we will slowly ramp up the ball's velocity to make the game more difficult!
 
 
 2. Make a function called update()
@@ -22,10 +19,9 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
    ```
    def update():
-       vx, vy = ball.velocity
        ball.move_ip(vx, vy)
    ```
-   The first line of the function uses two new variables, **vx** and **vy** to hold the two values of the ball.velocity tuple. The second line moves the ball by amount **vx* in the x direction and **vy** in the y direction.
+   The second line (which must be indented) moves the ball by amount **vx* in the x direction and **vy** in the y direction.
 
 4. Save the code and test it.
 
@@ -41,26 +37,22 @@ If you've followed the instructions in Step 2 your code should look like the cod
    ```
        if ball.top < 0:
            vy = -vy
-
-       ball.velocity = vx, vy
    ```
-   The first line tests if the top of the ball rectangle is at a y coordinate less than zero, the second line reverses the value of variable vy and the last line puts the new value of variable vy back into the ball's velocity property ready for the next time when the function is called.
+   The first line tests if the top of the ball rectangle is at a y coordinate less than zero, the second line changes the sign of the value of variable vy.
 
    **Be careful with the indentation!** The if statement needs to be indented because it's part of function update(). The line inside the if statement needs to be indented *twice*, once because it's inside function update() and again because it's inside the if statement.
 
 6. Reverse the x velocity if the ball goes off the sides
 
-   Now add code for two more if statements to function update, one to test if the ball goes off the left edge and one to test if the ball goes off the right edge. In both cases you will want to reverse the x velocity of the ball. Test the values of the ball properties ball.right and ball.left in your if statements.
-
-   Put the two if statements after the first if statement but before the line ball.velocity = vx, vy. Be careful to get the indentation correct.
+   Now add two more **if** statements to function update(), one to test if the ball goes off the left edge and one to test if the ball goes off the right edge. They will look very similar to the code above but some of the details will be different. In both cases you will want to reverse the x velocity of the ball. Test for the values of the ball properties ball.right and ball.left in your if statements.
 
 7. Testing your code
 
    To check if your code is working make a change to the line of code where you created variable **ball**. Change it to
    ```
-   ball = ZRect(WIDTH*0.8, HEIGHT*0.8, 30, 30)
+   ball = Rect(WIDTH*0.8, HEIGHT*0.8, 30, 30)
    ```
-   This will start the ball off a bit further to the right and lower down so you should be able to see it bounce off both the right and left edges.
+   This will start the ball off a bit further to the right and lower down so you should be able to see it bounce off both the right and left edges if your code is working properly.
    
    Now save your code and run it.
 

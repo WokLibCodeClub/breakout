@@ -1,6 +1,3 @@
-## Breakout type game to demonstrate Pygame Zero library
-## Based originally upon Tim Viner's London Python Dojo demonstration
-## Licensed under MIT License - see file COPYING
 
 # Set properties for game window
 TITLE = 'Breakout'
@@ -13,11 +10,13 @@ WHITE = (200, 200, 200)
 GOLD = (205, 145, 0)
 
 
-# Define a rectangle object variable for the ball
-ball = Rect(WIDTH/2, HEIGHT/2, 30, 30)
+# Define a rectangle object variable for velocity bar graph
+barht = 1 # height of bar graph
+batvelbar = Rect(WIDTH * 0.8, HEIGHT * 0.5 - barht, 50, barht)
+oldbatx = 0
 
 # Define rectangle object variable for the bat
-bat = Rect(WIDTH/2, 0.9 * HEIGHT, 120, 15)
+bat = Rect(WIDTH / 2, 0.9 * HEIGHT, 120, 15)
 
 
 # Detect movement of mouse pointer and  set the centre of the 
@@ -27,13 +26,20 @@ def on_mouse_move(pos):
     bat.centerx = x
 
 
+# Define function update() to measure batvel
+def update():
+    global oldbatx, barht
+    batvel = bat.centerx - oldbatx
+    barht = batvel 
+    batvelbar.height = barht
+    batvelbar.top = HEIGHT * 0.5 - barht
+    oldbatx = bat.centerx
+
 # Define function draw() to refresh the screen
 def draw():
     # clear the screen
     screen.clear()
-    # draw the ball using colour WHITE
-    screen.draw.filled_rect(ball, WHITE)
+    # draw the bar graph using colour GOLD
+    screen.draw.filled_rect(batvelbar, GOLD)
     # draw the bat using colour RED
     screen.draw.filled_rect(bat, RED)
-    # draw all the blocks in the blocks list in colour GOLD
-
