@@ -2,9 +2,9 @@
 
 If you've followed the instructions in Step 1 your code should look like the code in breakout1.py on this page.
 
-1. Add a variable called **bat** for the bat. This is another rectangle object, this time of type Rect.
+1. Add a variable called **bat** for the bat. This is another rectangle object of type Rect.
 
-   A good Python rule is to place all the variables for your project together, near the top. So a good place to put this code is just after the code which adds the variable ball.
+   A good Python rule is to place all the variables for your project together, near the top. So a good place to put this code is just after the code which adds the variable **ball**.
    ```
    bat = Rect(WIDTH/2, 0.9 * HEIGHT, 120, 15)
    ```
@@ -24,7 +24,7 @@ If you've followed the instructions in Step 1 your code should look like the cod
 
    In your code before function draw() define a new function called **on_mouse_move()**. This is a special Pygame Zero function which constantly checks the position of the mouse pointer in the game window, and puts the position in a variable called **pos**.
 
-   Because two coordinates are needed to show the position of the mouse pointer (x coordinate and y coordinate) the variable **pos** will be a *tuple* type of variable with two values. But in Breakout the bat only moves from side to side, not up and down, so we only need the mouse x coordinate to control the bat. 
+   We need *two* coordinates to show the position of the mouse pointer (x coordinate and y coordinate), so the variable **pos** will be a *tuple* type of variable with two values. But in Breakout the bat only moves from side to side, not up and down, so we only actually need the mouse x coordinate to control the bat. 
 
    We need a way to extract the different values from the tuple variable **pos**. Python does this using this code:
    ```
