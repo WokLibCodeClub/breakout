@@ -46,6 +46,8 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
    Now add two more **if** statements to function update(), one to test if the ball goes off the left edge and one to test if the ball goes off the right edge. They will look very similar to the code above but some of the details will be different. In both cases you will want to reverse the x velocity of the ball. Test for the values of the ball properties ball.right and ball.left in your if statements.
 
+   To see an explanation of the coordinate system in Pygame Zero projects look [here](https://github.com/WokLibCodeClub/LetterA/blob/master/Step1-display_letter/window.png)
+
 7. Testing your code
 
    To check if your code is working make a change to the line of code where you created variable **ball**. Change it to
