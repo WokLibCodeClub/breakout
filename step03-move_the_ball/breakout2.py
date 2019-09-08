@@ -35,5 +35,3 @@ def draw():
     screen.draw.filled_rect(ball, WHITE)
     # draw the bat using colour RED
     screen.draw.filled_rect(bat, RED)
-    # draw all the blocks in the blocks list in colour GOLD
-
