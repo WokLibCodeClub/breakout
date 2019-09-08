@@ -22,6 +22,8 @@
 
    We will use the sound block.wav whenever the ball hits one of the blocks
 
+   - Find the line in your code where there is an if block which tests for a collision between the bat and any block.
+
    We will use the win.wav sound when the player has won the game.
 
    We will use the die.wav sound when the player loses and the ball goes off the bottom of the window.

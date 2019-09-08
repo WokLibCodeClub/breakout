@@ -19,9 +19,11 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
    ```
    def update():
+       global vx, vy
        ball.move_ip(vx, vy)
    ```
-   The second line (which must be indented) moves the ball by amount **vx* in the x direction and **vy** in the y direction.
+   The second line (which must be indented) tells this function that when we use the variables vx and vy we mean the variables which we already created outside the function. Variables created outside any function are called *global variables*.
+   The third line moves the ball by amount **vx* in the x direction and **vy** in the y direction.
 
 4. Save the code and test it.
 
@@ -29,7 +31,11 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
    You probably saw the ball disappear off the top of the window. How can we stop this happening?
 
-   When the ball gets to the top of the window its y coordinate will be equal to zero (in Pygame Zero y coordinates start at zero at the top of the window and increase downwards). So to stop the ball disappearing we need 
+   When the ball gets to the top of the window its y coordinate will be equal to zero (in Pygame Zero y coordinates start at zero at the top of the window and increase downwards). 
+
+   To see an diagram of the coordinate system in Pygame Zero projects look [here](https://github.com/WokLibCodeClub/LetterA/blob/master/Step1-display_letter/window.png)
+
+   So to stop the ball disappearing we need 
    a) an ```if``` statement to check when the ball's x coordinate becomes less than zero, and
    b) a statement which will reverse the ball y velocity, so that instead of moving upwards it moves downwards.
 
@@ -44,9 +50,7 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
 6. Reverse the x velocity if the ball goes off the sides
 
-   Now add two more **if** statements to function update(), one to test if the ball goes off the left edge and one to test if the ball goes off the right edge. They will look very similar to the code above but some of the details will be different. In both cases you will want to reverse the x velocity of the ball. Test for the values of the ball properties ball.right and ball.left in your if statements.
-
-   To see an explanation of the coordinate system in Pygame Zero projects look [here](https://github.com/WokLibCodeClub/LetterA/blob/master/Step1-display_letter/window.png)
+   Now add two more **if** statements to function update(), one to test if the ball goes off the left edge and one to test if the ball goes off the right edge. They will look very similar to the code above but the details will be different. In both cases you will want to reverse the x velocity of the ball. Use the properties of the ball called ball.right and ball.left in your if statements.
 
 7. Testing your code
 
@@ -58,6 +62,6 @@ If you've followed the instructions in Step 2 your code should look like the cod
    
    Now save your code and run it.
 
-   Remember, we don't need to stop the ball going off the bottom of the window - in Breakout you lose a life if the ball goes off the bottom.
+   Remember, we don't need to stop the ball going off the bottom of the window - in Breakout you lose if the ball goes off the bottom.
 
 [Go to step 4](../step04-bat_on_ball)
