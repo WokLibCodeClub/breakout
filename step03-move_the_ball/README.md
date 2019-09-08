@@ -23,7 +23,8 @@ If you've followed the instructions in Step 2 your code should look like the cod
        ball.move_ip(vx, vy)
    ```
    The second line (which must be indented) tells this function that when we use the variables vx and vy we mean the variables which we already created outside the function. Variables created outside any function are called *global variables*.
-   The third line moves the ball by amount **vx* in the x direction and **vy** in the y direction.
+
+   The third line (also indented) moves the ball by amount **vx* in the x direction and **vy** in the y direction.
 
 4. Save the code and test it.
 
