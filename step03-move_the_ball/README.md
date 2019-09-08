@@ -13,7 +13,7 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
 2. Make a function called update()
 
-   When Pygame Zero is running it looks in the code for a function called **update()** and it runs this function just before running the function **draw()***. So the place to put all the code which changes the position of objects is in function update(). 
+   When Pygame Zero is running it looks in the code for a function called **update()** and it runs this function just before running the function **draw()**. So the place to put all the code which changes the position of objects is in function update(). 
 
    Add this code to create function update(). A good place for function update() is just before function draw().
 
