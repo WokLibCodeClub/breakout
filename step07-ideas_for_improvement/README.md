@@ -68,7 +68,7 @@ Luckily it is not too difficult to add code to ask the player whether or not the
 
    `makeblocks()`
 
-   This will create the list of blocks ready for the game to start.
+   This will run the function and create the list of blocks ready for the game to start.
 
 5. Add code inside function update() to say what will happen when the player presses y or n
 
