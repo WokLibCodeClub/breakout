@@ -30,7 +30,7 @@ but that would be a TERRIBLY tedious way of making them and very likely to produ
 
 In fact, the best way of doing this is to use *two* **for** loops, with *one inside the other*. This is a common thing to do in coding. When loops are arranged one inside the other they are called *nested* loops.
 
-#### 3. Make nested **for** loops
+#### 3. Calculating the coordinates for each block
 
 We want to make 32 blocks arranged in four rows and eight columns. In Python we will number the rows from the top 0, 1, 2, 3, and the columns from the left 0, 1, 2, 3, 4, 5, 6, 7. We will use two variables: **block_row** for the row number and **block_col** for the column number.
 
@@ -38,7 +38,7 @@ The *outer* **for** loop will be for the row number, and the *inner* **for** loo
 
 ```for block_row in range(4):```
 
-This sets the value of block_row to 0, 1, 2, 3 in turn. As soon as we have set the row number we can calculate the y coordinate of the top of the row - as all the blocks in this row will have the same y coordinate. In section 2 (above) we said we wanted the top row to have a y coordinate of 50 and for this to increase by 25 for each row, so the y coordinates for the four rows will be 50, 75, 100, 125.
+This sets the value of **block_row** to 0, 1, 2, 3 in turn. As soon as we have set the row number we can calculate the y coordinate of the top of the row - as all the blocks in this row will have the same y coordinate. In section 2 (above) we said we wanted the top row to have a y coordinate of 50 and for this to increase by 25 for each row, so the y coordinates for the four rows will be 50, 75, 100, 125.
 
 Now you need to write a little sum which would use the row number, and the row spacing (25), and the coordinate for the first row (50) to produce this sequence of numbers. How would you do this? 
 
@@ -50,21 +50,25 @@ for block_row in range(4):
     block_y =         # here you put in your sum using block_row, and 25 and 50
     print(block_y)
 ```
-If it doesn't work first time keep adjusting your calculation until you get it to print the sequence 50, 75, 100, 125. When you get this right you will have learned a key skill in using **for** loops.
+Save the code and run it. If it doesn't work first time keep adjusting your calculation until you get it to print the sequence 50, 75, 100, 125. When you get this right you will have learned a key skill in using **for** loops.
 
-
-The inner loop begins with this code
+The inner **for** loop begins with this code
 
 ```    for block_col in range(8):```
 
-but make sure this line is indented from the outer for loop as this loop has to run *inside* the outer loop. This will set the variable block_col in turn to 0, 1, ..., 7. When we have set the column number we can write an almost identical sum to calculate the x coordinate of the blocks in the column, (as all blocks in the same column have the same x coordinate). Use the column number, column spacing (100) and coordinate for the first column (2) to produce a sequence which goes 2, 102, 202, ..., 702.
+but make sure this line is indented from the outer **for** loop as this loop has to run *inside* the outer loop. This will set the variable **block_col** in turn to 0, 1, ..., 7. When we have set the column number we can write an almost identical sum to calculate the x coordinate of the blocks in the column (because all blocks in the same column have the same x coordinate). For the column x coordinates we want a sequence which goes 2, 102, 202, ..., 702. Use the column number, column spacing (100) and coordinate for the first column (2) to write a sum which produces this sequence.  You can adapt the simple Python code above to check you have the correct sum.
 
+#### 4. Use your calculations to make the blocks
 
-#### 4. Try out your code to make the blocks
+You can now incorporate your calculations for the x and y coordinates into the code for the game. But to make the check a bit simpler there is a Python file at the top of this page called test_blocks.py which you can use. In your Python editor open a new file and copy and paste the code from test_blocks.py.
 
-To test out your code for the blocks without calculations start a new Python file in your project, open the file test_blocks.py at the top of this page and copy the code into your new file. You now have to complete two lines of code, to compute the values of **block_x** and **block_y** then run this file with ```pgzrun```. If you get the calculations right the screen should look like this:
+Add the code for your calculations in the lines which begin **block_y =** and **block_x =** then save the file and run it with ```pgzrun```. If your calculations are right the screen should look like this:
 
 ![alt text](blocks_in_place.png "How the blocks should look")
+
+Look carefully at how the nested for loops are arranged in this file. The code which actually makes the block rectangle is in the *inner* for loop and begins ```block = Rect(``` and uses the results of your calculations for the coordinates of the block.
+
+The line which starts ```blocks.append``` is explained below.
 
 #### 5. Adding the new block to the list of blocks (and how to remove a block from the list)
 
