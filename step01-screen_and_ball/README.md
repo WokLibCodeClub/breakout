@@ -1,6 +1,8 @@
 # Step 1 - Let's create the screen and display a ball
 
-#### 1. Create a new folder called breakout to hold your code.
+##### 1. Create a new folder
+
+   In the location where you store your Python coding make a new folder called breakout to hold all your code and other resources you will need for this project.
 
 #### 2. Navigate the terminal window to this new folder.
 
