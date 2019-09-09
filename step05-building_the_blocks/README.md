@@ -37,23 +37,25 @@ The blocks will be rectangle objects, and we will put all the blocks in a Python
 
 4. Add the new block to the list of blocks (and how to remove a block from the list)
 
+   Every time we make a new block with the nested for loops we need to add it to the end of the list of blocks.
+
    The Python method for adding an item on to the end of a list is **append()**. If we type this Python code:
    ```
    my_list.append(new_item)
    ```
    this will add the object called new_item onto the end of the list called my_list. Think how you would adjust this code if you had a rectangle object called **block** which you wanted to add to the end of a list called **blocks**.
 
-   There is also a Python method for removing an item from a list, called **pop()**. If we type:
+   When the ball hits one of the blocks it destroys the block, so we need a way to remove a block from the list. There is also a Python method for removing an item from a list, called **pop()**. If we type:
    ```
    my_list.pop(unwanted_item)
    ```
    it does two things - it removes unwanted_item from the list and it shuffles all the other items in the list along so that there are no gaps in the list. 
 
-   Sometimes we only know the index number of the item we want to remove from the list. So if we wanted to remove the fourth item from a list (which has index 3) we would type:
+   Sometimes we only know the index number of the item we want to remove from the list. So if we wanted to remove the fourth item (which has index 3) from a list we would type:
    ```
    my_list.pop(my_list[3])
    ```
-   In the nested for loop for Breakout, as soon as we've made a new block with the Rect() function we need to add it to the list of blocks, so the next line of code should be and append() instruction.
+   In Breakout, as soon as we've made a new block with the Rect() function we need to add it to the list of blocks, so the next line of code should be an append() instruction.
 
 5. Try out your code to make the blocks
 
@@ -81,9 +83,21 @@ The blocks will be rectangle objects, and we will put all the blocks in a Python
    This will be ignored if there is no collision between the ball and a block, but if there is a collision it will give us the index number of the block which has been hit.
 
    When a block is hit we want these things to happen:
-     i) the block disappears - we do this by removing it from the list of blocks
-    ii) the sound block.wav gets played
-   iii) the y velocity of the ball gets reversed so the ball goes down if it was going up, or goes up if it was going down
+    i) the block disappears - we do this by removing it from the list of blocks (see the bit about the pop() method in section 4)
+   ii) the y velocity of the ball gets reversed so the ball goes down if it was going up, or goes up if it was going down
 
-   Under the if statement add lines of code (indented) to carry out these three tasks.
+   Under the if statement add lines of code (indented) to carry out these three tasks. You should be able to find the ways to do this on this page and in other bits of your code.
+
+7. Display the blocks
+
+   To draw the blocks on the screen we need to add some extra code in function draw(). The screen.draw.filled_rect() lines we have already written only draw a single rectangle (either the bat or the ball). Now we want code which will draw lots of rectangles (all the blocks) at the same time. This is done using another **for** loop. After the code to draw the bat and the ball add this (indented, of course):
+   ```
+   for block_to_draw in blocks:
+       screen.draw.filled_rect(block_to_draw, GOLD)
+   ```
+This goes through the list called blocks and draws every block in the list, filled with the colour we defined by our tuple variable GOLD.
+
+8. Try out your Breakout game
+
+   When you run breakout.py using pgzrun with all these additions you will have a game which is nearly finished. You should be able to move the bat to hit the ball and the blocks should disappear when they are hit. Try it and see.
 
