@@ -26,4 +26,4 @@ Challenge:
 
 Is the game a bit slow? What would you change to speed it up?
 
-[Go to step 4](../step04-bat_on_ball)
+[Go to step 5](../step05-building_the_blocks)
