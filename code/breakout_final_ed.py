@@ -23,6 +23,9 @@ ball = Rect(randint(0, WIDTH), HEIGHT/2, 30, 30)
 vx = 5
 vy = -5
 
+# Create a variable to set how much the game speeds up each bat hit
+speed_up = 1.05
+
 # Define rectangle object variable for the bat
 bat = Rect(WIDTH/2, 0.9 * HEIGHT, 120, 15)
 
@@ -87,7 +90,6 @@ def update():
         vy = -vy
 
         # increase x and y velocity if ball hits bat
-        speed_up = 1.05
         vy = vy * speed_up
         vx = vx * speed_up
 
