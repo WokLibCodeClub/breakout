@@ -53,9 +53,9 @@ for block_row in range(4):
 Save the code and run it. If it doesn't work first time keep adjusting your calculation until you get it to print the sequence 50, 75, 100, 125. When you get this right you will have learned a key skill in using **for** loops.
 
 The inner **for** loop begins with this code
-
-```    for block_col in range(8):```
-
+```
+    for block_col in range(8):
+```
 but make sure this line is indented from the outer **for** loop as this loop has to run *inside* the outer loop. This will set the variable **block_col** in turn to 0, 1, ..., 7. When we have set the column number we can write an almost identical sum to calculate the x coordinate of the blocks in the column (because all blocks in the same column have the same x coordinate). For the column x coordinates we want a sequence which goes 2, 102, 202, ..., 702. Use the column number, column spacing (100) and coordinate for the first column (2) to write a sum which produces this sequence.  You can adapt the simple Python code above to check you have the correct sum.
 
 #### 4. Use your calculations to make the blocks
