@@ -12,11 +12,11 @@ First, add this in the same part of your code where other variables (like bat, b
 
 This line makes an empty *list* variable called **blocks**, where the blocks will be stored. 
 
-#### 2. Create the rectangle objects to put in the list
+#### 2. Rectangle objects to put in the list
 
 The blocks will be rectangles which are 96 pixels wide and 23 pixels high, and we want four rows of blocks, with eight blocks in each row. We want to space them out to leave a narrow gap between each of the blocks. The ideal spacing will be to have the first block with its top left corner at coordinates x = 2, y = 50, then have them spaced them out every 100 pixels going across, and every 25 pixels going down. 
 
-We could make the blocks individually, giving the coordinates for each one:
+We could make the blocks in the list individually, giving the coordinates and size for each one:
 ```
 blocks[0] = Rect(2, 50, 96, 23)
 blocks[1] = Rect(102, 50, 96, 23)
@@ -40,7 +40,7 @@ The *outer* **for** loop will be for the row number, and the *inner* **for** loo
 
 This sets the value of **block_row** to 0, 1, 2, 3 in turn. As soon as we have set the row number we can calculate the y coordinate of the top of the row - as all the blocks in this row will have the same y coordinate. In section 2 (above) we said we wanted the top row to have a y coordinate of 50 and for this to increase by 25 for each row, so the y coordinates for the four rows will be 50, 75, 100, 125.
 
-Now you need to write a little sum which makes use of the row number, and the row spacing (25), and the coordinate for the first row (50) to produce this sequence of numbers. How would you do this? 
+Now you need to write a little sum which makes use of the row number, and the row spacing (25), and the y coordinate for the first row (50) to produce this sequence of numbers. How would you do this? 
 
 (Hint: it involves multiplication and addition.)
 
@@ -56,7 +56,7 @@ The inner **for** loop begins with this code
 ```
     for block_col in range(8):
 ```
-but make sure this line is indented from the outer **for** loop as this loop has to run *inside* the outer loop. This will set the variable **block_col** in turn to 0, 1, ..., 7. When we have set the column number we can calculate the x coordinate of the blocks in that column (because all blocks in the same column have the same x coordinate). For the x coordinates of columns 0 to 7 we want a sequence which goes 2, 102, 202, ..., 702. Use the column number, column spacing (100) and coordinate for the first column (2) to write an almost identical sum which produces this sequence.  You can adapt the simple Python code above to check you have the correct sum.
+but make sure this line is indented from the outer **for** loop as this loop has to run *inside* the outer loop. This will set the variable **block_col** in turn to 0, 1, ..., 7. When we have set the column number we can calculate the x coordinate of the blocks in that column (because all blocks in the same column have the same x coordinate). For the x coordinates of columns 0 to 7 we want a sequence which goes 2, 102, 202, ..., 702. Use the column number, column spacing (100) and x coordinate for the first column (2) to write an almost identical sum which produces this sequence.  You can adapt the simple Python code above to check you have the correct sum.
 
 #### 4. Use your calculations to make blocks on the screen
 
@@ -80,7 +80,7 @@ The Python method for adding an item on to the end of a list is **append()**. If
 ```
 my_list.append(new_item)
 ```
-this will add the object called ```new_item``` onto the end of the list called ```my_list```. Think how you would adjust this code if you had a rectangle object called **block** which you wanted to add to the end of a list called **blocks**.
+this will add the object called ```new_item``` onto the end of the list called ```my_list```. You will need to use this code but for a rectangle object called **block** which you want to add to the end of a list called **blocks**.
 
 When the ball hits one of the blocks it destroys the block, so we need a way to *remove* a block from the list. There is another Python method for removing an item from a list, called **pop()**. If we type:
 ```
@@ -92,13 +92,14 @@ Sometimes we only know the index number of the item we want to remove from the l
 ```
 my_list.pop(my_list[3])
 ```
+
 #### 6. Adding the nested loops code to breakout.py
 
 When you have the code in test_blocks.py working properly you can add the code for the nested **for** loops into your breakout.py code.
 
 Copy the code in test_blocks.py from the line beginning ```for block_row``` up to and including the line beginning ```blocks.append(``` and paste this into breakout.py after the line ```blocks = []```.
 
-#### 7. Destroying blocks
+#### 7. Destroying blocks when the ball hits them
 
 A block (which is a rectangle object) will get destroyed when it gets hit by the ball (which is another rectangle object).
 
