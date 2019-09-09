@@ -53,22 +53,22 @@ for block_row in range(4):
 Save the code and run it. If your calculations are right it will print the numbers 50, 75, 100, 125, each on a separate row. If it doesn't work first time keep adjusting your calculation until you get it to print the correct sequence. When you get this right you will have learned a key skill in using **for** loops.
 
 The inner **for** loop begins with this code
-`
+```
     for block_col in range(8):
-`
+```
 but make sure this line is indented from the outer **for** loop as this loop has to run *inside* the outer loop. This will set the variable **block_col** in turn to 0, 1, ..., 7. When we have set the column number we can calculate the x coordinate of the blocks in that column (because all blocks in the same column have the same x coordinate). For the x coordinates of columns 0 to 7 we want a sequence which goes 2, 102, 202, ..., 702. Use the column number, column spacing (100) and x coordinate for the first column (2) to write an almost identical sum which produces this sequence.  You can adapt the simple Python code above to check you have the correct sum.
 
 #### 4. Use your calculations to make blocks on the screen
 
 Before you set about adding your calculations for the x and y coordinates into the code for the game try editing the Python file at the top of this page called test_blocks.py. This is a segment of the Breakout game with just the code needed for the blocks. In your Python editor open a new file and copy and paste the code from test_blocks.py.
 
-Add the code for your calculations in the lines which begin ```block_y =``` and ```block_x =``` then save the file and run it with ```pgzrun```. If your calculations are right the screen should look like this:
+Add the code for your calculations in the lines which begin `block_y =` and `block_x =` then save the file and run it with `pgzrun`. If your calculations are right the screen should look like this:
 
 ![alt text](blocks_in_place.png "How the blocks should look")
 
-Look carefully at how the nested **for** loops are arranged in this code. The code which actually makes the block rectangle is in the *inner* for loop and begins ```block = Rect(``` and uses the results of your calculations for the coordinates of the block.
+Look carefully at how the nested **for** loops are arranged in this code. The code which actually makes the block rectangle is in the *inner* for loop and begins `block = Rect(` and uses the results of your calculations for the coordinates of the block.
 
-The line which starts ```blocks.append``` is explained below, in section 5.
+The line which starts `blocks.append` is explained below, in section 5.
 
 The other line which is new is the line in function draw() which actually draws the blocks on the screen. That is explained below, in section 8.
 
@@ -77,16 +77,16 @@ The other line which is new is the line in function draw() which actually draws 
 Every time we make a new block with the nested **for** loops we need to add it to the end of the list of blocks.
 
 The Python method for adding an item on to the end of a list is **append()**. If we type this Python code:
-```
-my_list.append(new_item)
-```
-this will add the object called ```new_item``` onto the end of the list called ```my_list```. You will need to use this code but for a rectangle object called **block** which you want to add to the end of a list called **blocks**.
+
+`my_list.append(new_item)`
+
+this will add the object called `new_item` onto the end of the list called `my_list`. You will need to use this code but for a rectangle object called **block** which you want to add to the end of a list called **blocks**.
 
 When the ball hits one of the blocks it destroys the block, so we need a way to *remove* a block from the list. There is another Python method for removing an item from a list, called **pop()**. If we type:
-```
-my_list.pop(unwanted_item)
-```
-it does two things - it removes ```unwanted_item``` from the list ```my_list``` and it shuffles all the other items in the list along so that there are no gaps in the list. 
+
+`my_list.pop(unwanted_item)`
+
+it does two things - it removes `unwanted_item` from the list `my_list` and it shuffles all the other items in the list along so that there are no gaps in the list. 
 
 Sometimes we only know the index number of the item we want to remove from the list. So if we wanted to remove the fourth item (which has index 3) from a list called my_list we would type:
 ```
@@ -97,7 +97,7 @@ my_list.pop(my_list[3])
 
 When you have the code in test_blocks.py working properly you can add the code for the nested **for** loops into your breakout.py code.
 
-Copy the code in test_blocks.py from the line beginning ```for block_row``` up to and including the line beginning ```blocks.append(``` and paste this into breakout.py after the line ```blocks = []```.
+Copy the code in test_blocks.py from the line beginning `for block_row` up to and including the line beginning `blocks.append(` and paste this into breakout.py after the line `blocks = []`.
 
 #### 7. Destroying blocks when the ball hits them
 
@@ -127,7 +127,7 @@ Under the if statement add lines of code (indented) to carry out these two tasks
 #### 7. Display the blocks
 
 To draw the blocks on the screen we need to add some extra code in function draw(). The screen.draw.filled_rect() lines we have already written only draw a single rectangle (either the bat or the ball). Now we want code which will draw lots of rectangles (all the blocks) at the same time. This is done using another **for** loop. After the code to draw the bat and the ball add this (indented correctly, of course):
-```
+```python
 for block_to_draw in blocks:
     screen.draw.filled_rect(block_to_draw, GOLD)
 ```
