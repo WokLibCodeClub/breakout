@@ -4,9 +4,9 @@ The code in breakout3.py on this page shows the project so far, except you will 
 
 #### 1. Detect when the bat hits the ball
 
-   When the ball moves down and hits the bat we want the ball to start going up again, so we need code to detect the hit and then to reverse the ball's y direction velocity. 
+   When the ball moves down and hits the bat we want the ball to start going up again, so we need code to detect the hit and then to reverse the ball's y-direction velocity. 
 
-   If two rectangles come together on the screen this is creates a collision, and Pygame Zero has a special function to detect when two rectangle objects collide with each other called **colliderect()**. It is used like this:
+   If two rectangles come together on the screen this creates a collision, and Pygame Zero has a special function to detect when two rectangle objects collide with each other called **colliderect()**. It is used like this:
    ```
    bat.colliderect(ball)
    ```
