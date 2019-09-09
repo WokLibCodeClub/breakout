@@ -8,6 +8,8 @@ First, make a variable called **speed_up** and set this to a value of 1.05. This
 
 Since we want the speed to increase whenever the ball hits the bat we need to add code inside the **if** block which tests for the ball hitting the bat - this begins `if ball.colliderect(bat):`. Inside this block add two lines of code which multiply the variables **vx** and **vy** by **speed_up**. This will make the ball travel faster every time it hits the bat. You can easily change the value of **speed_up** if you want to make this effect bigger or smaller. Experiment!
 
+What do you think would happen if you set **speed_up** to a value less than 1?
+
 #### 2. Winning and Losing
 
 The player wins when all the blocks have been destroyed. When this happens the list of blocks **blocks** will be empty (because every time a block is hit it is removed from the list). When Python finds an empty list it treats the list as something which is `False`. This means we can test for an empty list to determine if the player has won. 
