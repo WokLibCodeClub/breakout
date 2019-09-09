@@ -14,14 +14,14 @@
 
 #### 4. Set up the game window
 
-   The first steps are to specify the size of the game window. You can also give it a title. When run with Pygame Zero this code will control properties of the game window:
+   The first steps are to specify the size of the game window. You can also give it a title. When run with Pygame Zero this code will control properties of the game window (the width and height of the window are in pixels):
 
    ```
    TITLE = 'Breakout'
    WIDTH = 800
    HEIGHT = 600
    ```
-   You can test your code so far by typing ```pgzrun breakout.py``` in the terminal. It will create the window for you although it won't do anything else, yet.
+   You can test your code so far by typing ```pgzrun breakout.py``` in the terminal. It will open the window for you although it won't do anything else, yet.
 
    **To stop the code executing click on the red cross at the top right corner of the game window.**
 
