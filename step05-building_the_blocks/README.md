@@ -89,9 +89,9 @@ When the ball hits one of the blocks it destroys the block, so we need a way to 
 it does two things - it removes `unwanted_item` from the list `my_list` and it shuffles all the other items in the list along so that there are no gaps in the list. 
 
 Sometimes we only know the index number of the item we want to remove from the list. So if we wanted to remove the fourth item (which has index 3) from a list called my_list we would type:
-```
-my_list.pop(my_list[3])
-```
+
+`my_list.pop(my_list[3])`
+
 
 #### 6. Adding the nested loops code to breakout.py
 
@@ -112,9 +112,9 @@ We use this code:
 This checks if the ball is colliding with any rectangle in the list called blocks, and, if it is, it gives us the index number of the block which is in the collision. If the ball isn't colliding with any of the blocks it gives us the value -1. We can use this in an **if** statement. 
 
 In breakout.py in the function update() there are already several if statements, so add this line under the other if statements (don't forget to indent it):
-
-`    if ball.collidelist(blocks) >= 0:`
-
+```
+    if ball.collidelist(blocks) >= 0:
+```
 
 This will be ignored if there is no collision between the ball and a block, but if there is a collision it will give us the index number of the block which has been hit.
 
