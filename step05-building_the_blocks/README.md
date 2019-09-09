@@ -8,7 +8,7 @@ The blocks will be rectangle objects, and we will put all the blocks in a Python
 
    First, add this in the same part of your code where other variables (like bat, ball) are created, and before all the functions:
    ```
-      blocks = []
+   blocks = []
    ```
 
    This line makes an empty *list* variable called **blocks**, where the blocks will be stored. 
@@ -17,7 +17,7 @@ The blocks will be rectangle objects, and we will put all the blocks in a Python
 
    The blocks will be rectangles which are 96 pixels wide and 23 pixels high, and we want four rows of blocks, with eight blocks in each row. We want to space them out to leave a narrow gap between each of the blocks. The ideal spacing will be to have the first block with its top left corner at coordinates x = 2, y = 50, then have them spaced them out every 100 pixels going across, and every 25 pixels going down. 
 
-   We could make each block individually:
+   We could make the blocks individually, giving the coordinates for each one:
    ```
    blocks[0] = Rect(2, 50, 96, 23)
    blocks[1] = Rect(102, 50, 96, 23)
@@ -27,41 +27,49 @@ The blocks will be rectangle objects, and we will put all the blocks in a Python
 
    blocks[31] = Rect(702, 150, 96, 23)
    ```
-   but that would be a TERRIBLY tedious way of making them and very likely to produce errors. Much better is to use a Python **for** loop where Python automatically calculates the positions, creates the block and then adds the new block into the list.
+   but that would be a TERRIBLY tedious way of making them and very likely to produce errors. Much better is to use a Python **for** loop where Python automatically calculates the positions, creates the block and then adds each new block into the list.
 
    In fact, the best way of doing this is to use *two* **for** loops, with *one inside the other*. This is a common thing to do in coding. When loops are arranged one inside the other they are called *nested* loops.
 
 3. Make nested **for** loops
 
-   
+   We want to make 32 blocks arranged in four rows and eight columns. In Python we will number the rows from the top 0, 1, 2, 3, and the columns from the left 0, 1, 2, 3, 4, 5, 6, 7. We will use two variables: **block_row** for the row number and **block_col** for the column number.
 
-4. Add the new block to the list of blocks (and how to remove a block from the list)
+   The *outer* **for** loop will be for the row number, and the *inner* **for** loop will be for the column number. The outer loop begins with this code
+   ```for block_row in range(4):```
+   This sets the value of block_row to 0, 1, 2, 3 in turn. As soon as we have set the row number we can calculate the y coordinate of the top of the row - as all the blocks in this row will have the same y coordinate. In section 2 we said we wanted the top row to have a y coordinate of 50 and for this to increase by 25 for each row, so the y coordinates for the four rows will be 50, 75, 125, 175.
 
-   Every time we make a new block with the nested for loops we need to add it to the end of the list of blocks.
+   How would you write a little sum which would use the row number, and the row spacing (50), and the coordinate for the first row (25) to produce this sequence of numbers? This is a key skill in using **for** loops.
+
+
+
+4. Try out your code to make the blocks
+
+   To test out your calculations start a new Python file in your project, open the file test_blocks.py at the top of this page and copy the code into your new file. You now have to complete two lines of code, to compute the values of **block_x** and **block_y** then run this file with ```pgzrun```. If you get the calculations right the screen should look like this:
+
+![alt text](blocks_in_place.png "How the blocks should look")
+
+5. Adding the new block to the list of blocks (and how to remove a block from the list)
+
+   Every time we make a new block with the nested **for** loops we need to add it to the end of the list of blocks.
 
    The Python method for adding an item on to the end of a list is **append()**. If we type this Python code:
    ```
    my_list.append(new_item)
    ```
-   this will add the object called new_item onto the end of the list called my_list. Think how you would adjust this code if you had a rectangle object called **block** which you wanted to add to the end of a list called **blocks**.
+   this will add the object called ```new_item``` onto the end of the list called ```my_list```. Think how you would adjust this code if you had a rectangle object called **block** which you wanted to add to the end of a list called **blocks**.
 
-   When the ball hits one of the blocks it destroys the block, so we need a way to remove a block from the list. There is also a Python method for removing an item from a list, called **pop()**. If we type:
+   When the ball hits one of the blocks it destroys the block, so we need a way to remove a block from the list. There is another Python method for removing an item from a list, called **pop()**. If we type:
    ```
    my_list.pop(unwanted_item)
    ```
-   it does two things - it removes unwanted_item from the list and it shuffles all the other items in the list along so that there are no gaps in the list. 
+   it does two things - it removes ```unwanted_item``` from the list ```my_list``` and it shuffles all the other items in the list along so that there are no gaps in the list. 
 
    Sometimes we only know the index number of the item we want to remove from the list. So if we wanted to remove the fourth item (which has index 3) from a list we would type:
    ```
    my_list.pop(my_list[3])
    ```
-   In Breakout, as soon as we've made a new block with the Rect() function we need to add it to the list of blocks, so the next line of code should be an append() instruction.
-
-5. Try out your code to make the blocks
-
-   To test out your calculations start a new Python file in your project, open the file test_blocks.py at the top of this page and copy the code into your new file. You now have to complete two lines of code, to compute the values of **block_x** and **block_y** then run this file with ```pgzrun```. If you get the calculations right the screen should look like this:
-
-![alt text](blocks_in_place.png "How the blocks should look")
+   In Breakout, as soon as we've made a new block with the Rect() function we need to add it to the list of blocks. In your code after the line inside the nested loops which begins ```block = Rect(``` add the correct append() instruction.
 
 6. Destroying the blocks
 
