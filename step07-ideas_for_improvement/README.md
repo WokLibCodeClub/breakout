@@ -42,12 +42,11 @@ Luckily it is not too difficult to add code to ask the player whether or not the
    
 
 3. At the end of function draw() add this code:
-
-```python
-    if gameover:
-        # Ask user whether to play again
-        screen.draw.text('Play again (y) or (n)?', (30, HEIGHT - 30))
-```
+   ```python
+   if gameover:
+       # Ask user whether to play again
+       screen.draw.text('Play again (y) or (n)?', (30, HEIGHT - 30))
+   ```
    This will be ignored if gameover is False (game in progress) but if the game has stopped (won or lost) this will cause the text "Play again (y) or (n)?" to be written on the screen at the bottom left corner.
    The text will stay there until gameover is reset to False.
 
@@ -76,20 +75,20 @@ Luckily it is not too difficult to add code to ask the player whether or not the
    We need yet another **if** statement in function update to say what we want to happen when the player decides whether or not to play again. Here is the code for this:
 
    ```python
-       # if game over is True test for n pressed on keyboard
-    if gameover and keyboard.n:
-        exit()
-    # if game over is True test for y pressed on keyboard
-    elif gameover and keyboard.y:
-        # Set initial x and y velocities for the ball
-        vx = 5
-        vy = -5
-        # Set initial position for ball
-        ball.topleft =(randint(0, WIDTH), HEIGHT/2)
-        # Redraw the blocks
-        makeblocks()
-        # set gameover to False
-        gameover = False
+   # if game over is True test for n pressed on keyboard
+   if gameover and keyboard.n:
+       exit()
+   # if game over is True test for y pressed on keyboard
+   elif gameover and keyboard.y:
+       # Set initial x and y velocities for the ball
+       vx = 5
+       vy = -5
+       # Set initial position for ball
+       ball.topleft =(randint(0, WIDTH), HEIGHT/2)
+       # Redraw the blocks
+       makeblocks()
+       # set gameover to False
+       gameover = False
    ```
    The first part of this tests for two things at the same time - if the game is not running AND the player has pressed n. If both of these are true then the game will exit.
 
@@ -119,5 +118,5 @@ We need to measure how fast the bat is moving, and we can do this inside functio
    So that the function can measure the new bat velocity next time through we need to put the present x position of the bat into the variable oldbatx:
    `oldbatx = bat.centerx`
 
-   
+3. 
 
