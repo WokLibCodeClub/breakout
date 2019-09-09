@@ -26,7 +26,7 @@ The blocks will be rectangle objects, and we will put all the blocks in a Python
 
    blocks[31] = Rect(702, 150, 96, 23)
    ```
-   but that would be a TERRIBLY tedious way of making them and very likely to produce errors. Much better is to use a Python **for** loop where Python automatically calculates the positions, creates the block and then adds each new block into the list.
+   but that would be a TERRIBLY tedious way of making them and very likely to produce errors. Much better is to use a Python **for** loop where Python automatically calculates the positions, creates the blocks and adds each new block into the list as it's created.
 
    In fact, the best way of doing this is to use *two* **for** loops, with *one inside the other*. This is a common thing to do in coding. When loops are arranged one inside the other they are called *nested* loops.
 
