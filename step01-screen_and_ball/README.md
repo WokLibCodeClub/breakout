@@ -53,8 +53,8 @@ If you save your code and run it now you won't see a ball. That's because we nee
 Pygame Zero looks for a function called draw() when it runs code. It runs this function over and over again, 60 times a second. To write the draw function add this
 ```  
 def draw():
- screen.clear()
- screen.draw.filled_rect(ball, WHITE)
+    screen.clear()
+    screen.draw.filled_rect(ball, WHITE)
 ```
 **Note** ```screen``` is *not* a standard Python function, so some Python editors (especially VS Code) might show an error at the word ```screen```. Don't worry about this. The code is correct.
 
