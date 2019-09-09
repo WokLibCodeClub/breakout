@@ -50,7 +50,7 @@ If you save your code and run it now you won't see a ball. That's because we nee
 
 #### 6. Write function **draw()**
 
-Pygame Zero looks for a function called draw() when it runs code. It runs this function over and over again, 60 times a second. To write the draw function add this
+Pygame Zero looks for a function called draw() when it runs code. It runs this function over and over again, 60 times a second. To write the draw function add this to the end of your file
 ```  
 def draw():
     screen.clear()
@@ -60,7 +60,7 @@ def draw():
 
 Inside the draw function are two commands: the first will clear the screen, and the second will draw on the screen.
 
-The second function tells Pygame Zero to draw a rectangle and fill it with colour. The items in the brackets specify where to get the details about the rectangle to draw (we get these details from our variable **ball** which is a rectangle object) and what colour to fill the rectangle with (**WHITE** is one of our variables created earlier - here it will be taken to mean add 200 units of red, 200 units of blue and 200 units of green together, which will make a very, very light grey). 
+The second command tells Pygame Zero to draw a rectangle and fill it with colour. The items in the brackets specify where to get the details about the rectangle to draw (we get these details from our variable **ball** which is a rectangle object) and what colour to fill the rectangle with (**WHITE** is one of our variables created earlier - here it will be taken to mean add 200 units of red, 200 units of blue and 200 units of green together, which will make a very, very light grey). 
 
 #### 7. Save your code and test it
 

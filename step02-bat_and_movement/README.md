@@ -1,6 +1,6 @@
 # Step 2 - Add a bat and get it moving
 
-If you've followed the instructions in Step 1 your code should look like the code in breakout1.py on this page.
+If you've followed the instructions in Step 1 your code should look like the code in breakout1.py on this page. Note all the comment lines (which begin with #). These are very useful for identifying which part of your code does which task.
 
 #### 1. Add a variable for the bat
 
