@@ -125,7 +125,7 @@ We need to measure how fast the bat is moving, and we can do this inside functio
 
    Inside the if statement that checks for a collision between the bat and the ball just after the variable **vy** is reversed in sign add a line to change the variable **vx**. There are lots of ways of doing it. Here is one suggestion:
 
-   ```vx = vx + batvel/5`
+   `vx = vx + batvel/5`
 
 Try experimenting with changing the number 5 to make the effect bigger or smaller.
 
