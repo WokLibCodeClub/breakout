@@ -45,9 +45,11 @@ Now you need to write a little sum which makes use of the row number, and the ro
 (Hint: it involves multiplication and addition.)
 
 You can try out your calculation by writing a very simple Python programme (in a new file) and printing the results. This doesn't need pgzrun, you can just run it in normal Python. Put this code in a new file:
-```for block_row in range(4):
+```python
+for block_row in range(4):
     block_y =         # here you put in your sum using block_row, and 25 and 50
-    print(block_y)```
+    print(block_y)
+```
 Save the code and run it. If your calculations are right it will print the numbers 50, 75, 100, 125, each on a separate row. If it doesn't work first time keep adjusting your calculation until you get it to print the correct sequence. When you get this right you will have learned a key skill in using **for** loops.
 
 The inner **for** loop begins with this code
