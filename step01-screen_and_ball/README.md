@@ -1,14 +1,14 @@
 # Step 1 - Let's create the screen and display a ball
 
-1. Create a new folder called breakout to hold your code.
+###1. Create a new folder called breakout to hold your code.
 
-2. Navigate the terminal window to this new folder.
+###2. Navigate the terminal window to this new folder.
 
    (If you are using VS Code as your editor the easiest way to do this is to go to File>Open Folder, and select your new folder. By doing that you will ensure the Terminal opens in the right folder.)
 
-3. Using your Python editor create a new empty file and save it as breakout.py
+###3. Using your Python editor create a new empty file and save it as breakout.py
 
-4. Set up the game window
+###4. Set up the game window
 
    The first steps are to specify the size of the game window. You can also give it a title. When run with Pygame Zero this code will control properties of the game window:
 
@@ -21,7 +21,7 @@
 
    **To stop the code executing click on the red cross at the top right corner of the game window.**
 
-5. Add some variables to the project
+###5. Add some variables to the project
 
    We are going to make some variables for the project. The first three are variables of a type called *tuples* which have a sequence of values, with the values separated by commas.
 
@@ -44,7 +44,7 @@
 
    If you save your code and run it now you won't see a ball. That's because we need to write the code to *draw* the ball on the screen.
 
-6. Write function **draw()**
+###6. Write function **draw()**
 
    Pygame Zero looks for a function called draw() when it runs code. It runs this function over and over again, 60 times a second.    To write the draw function add this
    ```  
@@ -58,7 +58,7 @@
 
    The second function tells Pygame Zero to draw a rectangle and fill it with colour. The items in the brackets specify where to get the details about the rectangle to draw (we get these details from our variable **ball** which is a rectangle object) and what colour to fill the rectangle with (**WHITE** is one of our variables created earlier - here it will be taken to mean add 200 units of red, 200 units of blue and 200 units of green together, which will make a very, very light grey). 
 
-7. Save your code and test it with ```pgzrun breakout.py``` in the terminal window.
+###7. Save your code and test it with ```pgzrun breakout.py``` in the terminal window.
 
    Did the code do what you expected?
 

@@ -1,4 +1,4 @@
-# Step 5 - Add the blocks
+# Step 5 - Working with the blocks (rather long, I'm afraid)
 
 The object of Breakout is to get the ball to destroy all the blocks at the top of the window while preventing the ball from going off the bottom of the window. This section is about how to draw the blocks and how they get destroyed if the ball hits them.
 
@@ -7,11 +7,12 @@ The blocks will be rectangle objects, and we will put all the blocks in a Python
 1. Make an empty list variable
 
    First, add this in the same part of your code where other variables (like bat, ball) are created, and before all the functions:
+
    ```blocks = []```
 
    This line makes an empty *list* variable called **blocks**, where the blocks will be stored. 
 
-2. Create the rectangles to put in the list
+2. Create the rectangle objects to put in the list
 
    The blocks will be rectangles which are 96 pixels wide and 23 pixels high, and we want four rows of blocks, with eight blocks in each row. We want to space them out to leave a narrow gap between each of the blocks. The ideal spacing will be to have the first block with its top left corner at coordinates x = 2, y = 50, then have them spaced them out every 100 pixels going across, and every 25 pixels going down. 
 
