@@ -72,7 +72,7 @@ Luckily it is not too difficult to add code to ask the player whether or not the
 
 5. Add code inside function update() to say what will happen when the player presses y or n
 
-   We need yet another **if** statement in function update to say what we want to happen when the player decides whether or not to play again. Here is the code for this:
+   We need yet another **if** statement in function update() to say what we want to happen when the player decides whether or not to play again. Here is the code for this:
 
    ```python
    # if game over is True test for n pressed on keyboard
@@ -90,10 +90,10 @@ Luckily it is not too difficult to add code to ask the player whether or not the
        # set gameover to False
        gameover = False
    ```
-   The first part of this tests for two things at the same time - if the game is not running AND the player has pressed n. If both of these are true then the game will exit.
+   The first part of this tests for two things at the same time - if the game is stopped AND if the player has pressed n. If both of these are true then the game will exit.
 
    But if the game is not running and the player has pressed y to play again then we need several things to happen:
-   - we need to reset the initial velocity for the ball
+   - we need to reset the initial x and y velocity for the ball
    - we need to reset the intial position for the ball
    - we need to redraw all the blocks
    - we need to reset gameover to False, as the game is now in progress.
@@ -105,7 +105,7 @@ Luckily it is not too difficult to add code to ask the player whether or not the
 
 The original arcade game allowed the player to put spin on the ball by moving the bat sideways as it hit the ball. This would change the direction of the ball after the hit. We can add this feature as well.
 
-We need to measure how fast the bat is moving, and we can do this inside function update(). Function update runs repeatedly so if we measure the bat's x position then remeasure it the next time through function update then the difference should show how fast the bat is moving.
+We need to measure how fast the bat is moving, and we can do this inside function update(). Function update() runs repeatedly so if we measure the bat's x position then remeasure it the next time through function update() then the difference should show how fast the bat is moving.
 
 1. First create a new global variable called oldbatx and set it to 0. Put this code with the other global variables:
 
@@ -117,9 +117,15 @@ We need to measure how fast the bat is moving, and we can do this inside functio
 
    `batvel = bat.centerx - oldbatx`
 
-   So that the function can measure the new bat velocity next time through we need to put the present x position of the bat into the variable oldbatx:
-   
+    Now we need to put the present x position of the bat into the variable oldbatx so that the function can use it to measure the new bat velocity next time through:
+
    `oldbatx = bat.centerx`
 
-3. 
+3. Use the value of batvel to change the ball's x direction velocity when the bat hits the ball
+
+   Inside the if statement that checks for a collision between the bat and the ball just after the variable **vy** is reversed in sign add a line to change the variable **vx**. There are lots of ways of doing it. Here is one suggestion:
+
+   ```vx = vx + batvel/5`
+
+Try experimenting with changing the number 5 to make the effect bigger or smaller.
 
