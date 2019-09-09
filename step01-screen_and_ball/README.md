@@ -62,7 +62,9 @@
 
    The second function tells Pygame Zero to draw a rectangle and fill it with colour. The items in the brackets specify where to get the details about the rectangle to draw (we get these details from our variable **ball** which is a rectangle object) and what colour to fill the rectangle with (**WHITE** is one of our variables created earlier - here it will be taken to mean add 200 units of red, 200 units of blue and 200 units of green together, which will make a very, very light grey). 
 
-#### 7. Save your code and test it with ```pgzrun breakout.py``` in the terminal window.
+#### 7. Save your code and test it
+
+   Type ```pgzrun breakout.py``` in the terminal window.
 
    Did the code do what you expected?
 
