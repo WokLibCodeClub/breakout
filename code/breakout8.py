@@ -31,6 +31,8 @@ gameover = False
 
 # Define rectangle object variable for the bat
 bat = Rect(WIDTH/2, 0.9 * HEIGHT, 120, 15)
+# Define a variable to hold previous bat x position
+oldbatx = 0
 
 # Create an empty list variable called blocks
 blocks = []
@@ -72,10 +74,15 @@ def on_mouse_move(pos):
 # Define function update() to vary object position
 def update():
     # Use global variables in the function
-    global vx, vy, gameover
+    global vx, vy, gameover, oldbatx
 
     # move the ball by distance vx and vy in x and y directions
     ball.move_ip(vx, vy)
+
+    # Measure bat sideways velocity by comparing current and previous x coord
+    batvel = bat.centerx - oldbatx
+    # set oldbatx to current bat position 
+    oldbatx = bat.centerx
 
     # reverse x velocity if ball hits left or right wall
     if ball.right > WIDTH or ball.left <= 0:
@@ -85,7 +92,7 @@ def update():
     if ball.top <= 0:
         vy = -vy
 
-    # play a sound, set gameover to True 
+    # play sound, set gameover to True
     # if ball goes below bottom wall
     if ball.top > HEIGHT:
         sounds.die.play()
@@ -95,6 +102,8 @@ def update():
     if ball.colliderect(bat):
         sounds.blip.play()
         vy = -vy
+        # change vx by an amount related to batvel
+        vx = vx + batvel/5
 
         # increase x and y velocity if ball hits bat
         vy = vy * speed_up
@@ -134,6 +143,7 @@ def update():
         # set gameover to False
         gameover = False
 
+    # measure bat velocity
 
 # Define function draw() to refresh the screen
 def draw():

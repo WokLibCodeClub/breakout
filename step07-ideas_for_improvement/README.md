@@ -55,13 +55,13 @@ Luckily it is not too difficult to add code to ask the player whether or not the
 
    Before we start the game we need to create and draw the blocks. If we lose or win and want to play again we need to draw all the blocks again. To avoid writing exactly the same code twice we will turn this code into a function, then whenever we want to redraw the blocks we simply call the function.
 
-   Above the line `for block_row in range(4):`
+   Above the line `for block_row in range(4):` type
 
    `def makeblocks():`
 
-   then select all the lines down to and including the line `blocks.append(block)`, then press the TAB key. This should indent all this code which will make it part of the function.
+   then select all the lines down to and including the line `blocks.append(block)`, and press the TAB key. This should indent all this code which will make it part of the function.
 
-   When we run this function we should start again with an empty blocks list, so copy the code `blocks = []` and paste this as the first line of function makeblocks().
+   Whenever we run this function we should make sure we start with an empty blocks list, so copy the code `blocks = []` and paste this as the first line of function makeblocks().
 
    However, we now have a global variable called **blocks** which was created outside any function, and another variable called **blocks** created inside the function. To avoid confusion we need to ensure that we use the global variable inside the function, so as the very first line of the function add the code `global blocks`.
 
@@ -71,7 +71,53 @@ Luckily it is not too difficult to add code to ask the player whether or not the
 
    This will create the list of blocks ready for the game to start.
 
-5. 
+5. Add code inside function update() to say what will happen when the player presses y or n
+
+   We need yet another **if** statement in function update to say what we want to happen when the player decides whether or not to play again. Here is the code for this:
+
+   ```python
+       # if game over is True test for n pressed on keyboard
+    if gameover and keyboard.n:
+        exit()
+    # if game over is True test for y pressed on keyboard
+    elif gameover and keyboard.y:
+        # Set initial x and y velocities for the ball
+        vx = 5
+        vy = -5
+        # Set initial position for ball
+        ball.topleft =(randint(0, WIDTH), HEIGHT/2)
+        # Redraw the blocks
+        makeblocks()
+        # set gameover to False
+        gameover = False
+   ```
+   The first part of this tests for two things at the same time - if the game is not running AND the player has pressed n. If both of these are true then the game will exit.
+
+   But if the game is not running and the player has pressed y to play again then we need several things to happen:
+   - we need to reset the initial velocity for the ball
+   - we need to reset the intial position for the ball
+   - we need to redraw all the blocks
+   - we need to reset gameover to False, as the game is now in progress.
+   The lines of code above do all of these things, after which the game is now ready to go again.
+
+   If the game is not running but the player doesn't press y or n then these if conditions are false so they are ignored. If the game is running then these if conditions are false so they are ignored.
 
 #### 3. Let the bat give the ball some spin
+
+The original arcade game allowed the player to put spin on the ball by moving the bat sideways as it hit the ball. This would change the direction of the ball after the hit. We can add this feature as well.
+
+We need to measure how fast the bat is moving, and we can do this inside function update(). Function update runs repeatedly so if we measure the bat's x position then remeasure it the next time through function update then the difference should show how fast the bat is moving.
+
+1. First create a new global variable called oldbatx and set it to 0. Put this code with the other global variables:
+
+   `oldbatx = 0`
+
+   Inside function update() add oldbatx to the list of global variables at the top of this function.
+
+2. Add the code in function update() to calculate the bat velocity and put it in a variable called batvel.
+   `batvel = bat.centerx - oldbatx`
+   So that the function can measure the new bat velocity next time through we need to put the present x position of the bat into the variable oldbatx:
+   `oldbatx = bat.centerx`
+
+   
 
