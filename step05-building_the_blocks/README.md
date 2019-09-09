@@ -62,7 +62,7 @@ but make sure this line is indented from the outer **for** loop as this loop has
 
 You can now incorporate your calculations for the x and y coordinates into the code for the game. But to make the check a bit simpler there is a Python file at the top of this page called test_blocks.py which you can use. In your Python editor open a new file and copy and paste the code from test_blocks.py.
 
-Add the code for your calculations in the lines which begin **block_y =** and **block_x =** then save the file and run it with ```pgzrun```. If your calculations are right the screen should look like this:
+Add the code for your calculations in the lines which begin ```block_y =``` and ```block_x =``` then save the file and run it with ```pgzrun```. If your calculations are right the screen should look like this:
 
 ![alt text](blocks_in_place.png "How the blocks should look")
 
