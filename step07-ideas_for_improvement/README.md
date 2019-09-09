@@ -129,3 +129,8 @@ We need to measure how fast the bat is moving, and we can do this inside functio
 
 Try experimenting with changing the number 5 to make the effect bigger or smaller.
 
+#### 4. Give the player more than one life before losing
+
+#### 5. Add a score for each block destroyed.
+
+#### 6. Make blocks of different colours with a different score for each colour
