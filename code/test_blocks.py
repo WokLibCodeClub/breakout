@@ -18,8 +18,8 @@ for block_row in range(4):
     for block_col in range(8):
         # Create a rectangle object in a variable called block
         block = Rect(
-                         , # put your sum for the rectangle's x using block_row before the comma
-                         , # put your sum for the rectangle's y using block_col before the comma
+                         , # put your sum for the rectangle's x using block_col before the comma
+                         , # put your sum for the rectangle's y using block_row before the comma
             96, # width of each block in pixels
             23  # height of each block in pixels
         )
