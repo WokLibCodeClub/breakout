@@ -2,7 +2,7 @@
 
 The code in breakout3.py on this page shows the project so far, except you will see in function update() that the if statements to check if the ball goes off the left or right edges have been combined into a single if statement by using the connecting word **or**. This makes the code shorter. It is often possible to combine two or more **if** statements into a single statement like this.
 
-1. Detect when the bat hits the ball
+#### 1. Detect when the bat hits the ball
 
    When the ball moves down and hits the bat we want the ball to start going up again, so we need code to detect the hit and then to reverse the ball's y direction velocity. 
 
@@ -16,7 +16,7 @@ The code in breakout3.py on this page shows the project so far, except you will 
    ```
    then underneath write code (indented) which will reverse the ball's y velocity.
 
-2. Save and test your code
+#### 2. Save and test your code
 
    You should now have a game where the ball bounces off the top and the sides of the window, and you can use the bat to stop it going off the bottom.
 
