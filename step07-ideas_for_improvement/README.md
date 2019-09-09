@@ -113,7 +113,7 @@ We need to measure how fast the bat is moving, and we can do this inside functio
 
    Inside function update() add oldbatx to the list of global variables at the top of this function.
 
-2. Add the code in function update() to calculate the bat velocity and put it in a variable called batvel.
+2. Add code inside function update() to calculate the bat velocity and put it in a variable called batvel.
 
    `batvel = bat.centerx - oldbatx`
 
@@ -123,7 +123,7 @@ We need to measure how fast the bat is moving, and we can do this inside functio
 
 3. Use the value of batvel to change the ball's x direction velocity when the bat hits the ball
 
-   Inside the if statement that checks for a collision between the bat and the ball just after the variable **vy** is reversed in sign add a line to change the variable **vx**. There are lots of ways of doing it. Here is one suggestion:
+   Inside the if statement that checks for a collision between the bat and the ball and just after the variable **vy** is reversed in sign add a line to change the variable **vx**. There are lots of ways of doing it. Here is one suggestion:
 
    `vx = vx + batvel/5`
 
