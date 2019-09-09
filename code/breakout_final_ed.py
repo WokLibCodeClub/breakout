@@ -30,14 +30,14 @@ bat = Rect(WIDTH/2, 0.9 * HEIGHT, 120, 15)
 # Create an empty list variable called blocks
 blocks = []
 
-# Use variable block_y to make four rows of blocks
-for block_y in range(4):
-    # Use variable block_x to make 8 blocks in each row
-    for block_x in range(8):
+# Use variable block_row to make four rows of blocks
+for block_row in range(4):
+    # Use variable block_col to make 8 blocks in each row
+    for block_col in range(8):
         # Create a rectangle object in variable block
         block = Rect(
-            block_x * 100 + 2, # x position of left edge of block
-            block_y * 25 + 50, # y position of top edge of block
+            block_col * 100 + 2, # x position of left edge of block
+            block_row * 25 + 50, # y position of top edge of block
             96, # width of each block in pixels
             23  # height of each block in pixels
         )
@@ -91,22 +91,20 @@ def update():
         vy = vy * speed_up
         vx = vx * speed_up
 
-    # define a local variable called to_kill
-    # If the ball hits one of the blocks set to_kill to
-    # the index number of the hit block in the blocks list
-    # otherwise set it to -1
-    to_kill = ball.collidelist(blocks)
+    # If the ball hits one of the blocks ball.collidelist(blocks)
+    # will give the index number of the hit block in the blocks list
+    # otherwise it will be set it to -1
 
-    if to_kill >= 0: # this means one of the blocks has been hit
+    if ball.collidelist(blocks) >= 0: # this means one of the blocks has been hit
         # play a sound
         sounds.block.play()
         # reverse the y velocity
         vy = -vy
         # remove the hit block from the blocks list
-        blocks.pop(to_kill)
+        blocks.pop(ball.collidelist(blocks))
 
     # test if the blocks list is now empty
-    # ie all the blocks have been killed
+    # ie all the blocks have been destroyed
     if not blocks:
         # play a sound, print a message and exit
         sounds.win.play()
