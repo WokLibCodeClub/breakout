@@ -2,7 +2,7 @@
 
 If you've followed the instructions in Step 2 your code should look like the code in breakout2.py on this page. Note that there are comments added to show which parts of the code do which task. This is a very good thing to do in your Python coding.
 
-1. Add variables for the initial velocity of the ball
+#### 1. Add variables for the initial velocity of the ball
 
    We need two new variables, which we could call **vx** and **vy** to set the initial velocity of the ball in the x direction and y direction. Underneath the line which creates the ball rectangle object add two lines to set the variable **vx** to a value of 2 and the variable **vy** to a value -2.
 
@@ -11,7 +11,7 @@ If you've followed the instructions in Step 2 your code should look like the cod
    We use variables for vx and vy because, as you will see later, we will slowly ramp up the ball's velocity to make the game more difficult!
 
 
-2. Make a function called update()
+#### 2. Make a function called update()
 
    When Pygame Zero is running it looks in the code for a function called **update()** and it runs this function just before running the function **draw()**. So the place to put all the code which changes the position of objects is in function update(). 
 
@@ -26,9 +26,9 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
    The third line (also indented) moves the ball by amount **vx** in the x direction and **vy** in the y direction.
 
-4. Save the code and test it.
+#### 4. Save the code and test it.
 
-5. What to do if the ball goes off the edge?
+#### 5. What to do if the ball goes off the edge?
 
    You probably saw the ball disappear off the top of the window. How can we stop this happening?
 
@@ -51,11 +51,11 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
    **Be careful with the indentation!** The if statement needs to be indented because it's part of function update(). The line inside the if statement needs to be indented *twice*, once because it's inside function update() and again because it's inside the if statement.
 
-6. Reverse the x velocity if the ball goes off the sides
+#### 6. Reverse the x velocity if the ball goes off the sides
 
    Now add two more **if** statements to function update(), one to test if the ball goes off the left edge and one to test if the ball goes off the right edge. They will look very similar to the code above but the details will be different. In both cases you will want to reverse the x velocity of the ball. Use the properties of the ball called ball.right and ball.left in your if statements.
 
-7. Testing your code
+#### 7. Testing your code
 
    To check if your code is working make a change to the line of code where you created variable **ball**. Change it to
    ```
