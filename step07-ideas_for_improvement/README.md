@@ -28,15 +28,18 @@ Luckily it is not too difficult to add code to ask the player whether or not the
    `gameover = False`
 
    Place this with the other global variables near the top of the code.
-   Delete the line which prints "Loser!" at the terminal.
 
+   We are going to use this global variable inside function update(). So at the beginning of this function add the variable `gameover` to the list of global variables which currently has `vx` and `vy`.
+ 
 2. The variable gameover will only be True when the player either wins or loses.
    Inside the if statement which checks for winning add
 
    `gameover = True`
 
-   Add the same inside the if statement which checks for losing.
-   Delete the line which prints "Winner!" at the terminal.
+   Delete the line which prints "Winner!" at the terminal, and delete the line which exits the programme.
+
+   Add the same code inside the if statement which checks for losing. Delete the line which prints "Loser!" at the terminal, and delete the line which exits the programme.
+   
 
 3. At the end of function draw() add this code:
 
@@ -45,11 +48,30 @@ Luckily it is not too difficult to add code to ask the player whether or not the
         # Ask user whether to play again
         screen.draw.text('Play again (y) or (n)?', (30, HEIGHT - 30))
 ```
-   This will be ignored if gameover is False (game in progress) but if the game has stopped this will cause the text "Play again (y) or (n)?" to be written on the screen at the bottom left corner.
+   This will be ignored if gameover is False (game in progress) but if the game has stopped (won or lost) this will cause the text "Play again (y) or (n)?" to be written on the screen at the bottom left corner.
    The text will stay there until gameover is reset to False.
 
-4. Make the code for creating the blocks into a function
+4. Make all the code for creating the blocks into a function
+
    Before we start the game we need to create and draw the blocks. If we lose or win and want to play again we need to draw all the blocks again. To avoid writing exactly the same code twice we will turn this code into a function, then whenever we want to redraw the blocks we simply call the function.
+
+   Above the line `for block_row in range(4):`
+
+   `def makeblocks():`
+
+   then select all the lines down to and including the line `blocks.append(block)`, then press the TAB key. This should indent all this code which will make it part of the function.
+
+   When we run this function we should start again with an empty blocks list, so copy the code `blocks = []` and paste this as the first line of function makeblocks().
+
+   However, we now have a global variable called **blocks** which was created outside any function, and another variable called **blocks** created inside the function. To avoid confusion we need to ensure that we use the global variable inside the function, so as the very first line of the function add the code `global blocks`.
+
+   We now need to call this function before the game starts for the first time. At the bottom of the code, after all the functions, and not indented at all, add the code
+
+   `makeblocks()`
+
+   This will create the list of blocks ready for the game to start.
+
+5. 
 
 #### 3. Let the bat give the ball some spin
 
