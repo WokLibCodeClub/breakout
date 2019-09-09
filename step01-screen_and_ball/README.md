@@ -23,7 +23,7 @@
    ```
    You can test your code so far by typing ```pgzrun breakout.py``` in the terminal. It will open the window for you although it won't do anything else, yet.
 
-###   To stop the code executing click on the red cross at the top right corner of the game window.**
+###   To stop the code executing click on the red cross at the top right corner of the game window.
 
 #### 5. Add some variables to the project
 
