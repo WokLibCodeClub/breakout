@@ -1,4 +1,4 @@
-# Step 3 - Add a bat and get it moving
+# Step 2 - Add a bat and get it moving
 
 If you've followed the instructions in Step 1 your code should look like the code in breakout1.py on this page.
 
