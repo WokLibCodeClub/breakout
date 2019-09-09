@@ -14,15 +14,25 @@ One way to use this is by changing the declaration of the ball variable to somet
 
 `ball = Rect(randint(0, WIDTH), HEIGHT/2, 30, 30)`
 
-In this example the ball's initial x coordinate is set to a random integer between 0 and the width of the window, while the initial y coordinate is fixed at half way up the window.
+In this example the ball's initial x coordinate is set to a random integer between 0 and the width of the window, while the initial y coordinate is fixed at half way up the window. This will ensure the ball starts from a different position when you play the game again.
 
-There are lots of variations - having another `randint` function for the y coordinate, or introducing a random element into **vx** and **vy** so the ball's initial direction of travel might vary.
+There are lots of possible variations - having another `randint` function for the y coordinate, or introducing a random element into **vx** and **vy** so the ball's initial direction of travel can vary.
 
 #### 2. Play again?
 
 If you fancy playing the game more than once it's a bit annoying to have to restart it with pgzrun every time.
 
-Luckily it is quite easy to add code to ask the player whether or not they want to play again.
+Luckily it is not too difficult to add code to ask the player whether or not they want to play again. There are several stages to doing this.
+1. Make a global variable called **gameover** and set it to False
+   `gameover = False`
+   Place this with the other global variables near the top of the code.
+   Delete the line which prints "Loser!" at the terminal.
 
-2. Let the bat give the ball some spin
+2. The variable gameover will only be True when the player either wins or loses.
+   Inside the if statement which checks for winning add
+   `gameover = True`
+   Add the same inside the if statement which checks for losing.
+   Delete the line which prints "Winner!" at the terminal.
+
+#### 3. Let the bat give the ball some spin
 

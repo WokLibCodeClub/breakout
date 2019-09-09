@@ -26,32 +26,40 @@ vy = -5
 # Create a variable to set how much the game speeds up each bat hit
 speed_up = 1.05
 
+# Create boolean variable to check if the game is over
+gameover = False
+
 # Define rectangle object variable for the bat
 bat = Rect(WIDTH/2, 0.9 * HEIGHT, 120, 15)
 
-# Generate a list of rectangle objects for the blocks
 # Create an empty list variable called blocks
 blocks = []
 
-# Use variable block_row to make four rows of blocks
-for block_row in range(4):
-    # Use variable block_col to make 8 blocks in each row
-    for block_col in range(8):
-        # Create a rectangle object in variable block
-        block = Rect(
-            block_col * 100 + 2, # x position of left edge of block
-            block_row * 25 + 50, # y position of top edge of block
-            96, # width of each block in pixels
-            23  # height of each block in pixels
-        )
+def makeblocks():
+    # use the global variable blocks
+    global blocks
+    # Generate a list of rectangle objects for the blocks
+    # Start with an empty list
+    blocks = []
+    # Use variable block_row to make four rows of blocks
+    for block_row in range(4):
+        # Use variable block_col to make 8 blocks in each row
+        for block_col in range(8):
+            # Create a rectangle object in variable block
+            block = Rect(
+                block_col * 100 + 2, # x position of left edge of block
+                block_row * 25 + 50, # y position of top edge of block
+                96, # width of each block in pixels
+                23  # height of each block in pixels
+            )
 
-        # The lines above from block = to ) are all part of one
-        # Python instruction. You could put them all in a single line.
-        # Python doesn't mind if you break a long line like this,
-        # it makes the code a bit easier to read and to add comments.
+            # The lines above from block = to ) are all part of one
+            # Python instruction. You could put them all in a single line.
+            # Python doesn't mind if you break a long line like this,
+            # it makes the code a bit easier to read and to add comments.
 
-        # Add new rectangle object block to the end of the blocks list 
-        blocks.append(block)
+            # Add new rectangle object block to the end of the blocks list 
+            blocks.append(block)
 
 
 # Detect movement of mouse pointer and  set the centre of the 
@@ -64,7 +72,7 @@ def on_mouse_move(pos):
 # Define function update() to vary object position
 def update():
     # Use global variables in the function
-    global vx, vy
+    global vx, vy, gameover
 
     # move the ball by distance vx and vy in x and y directions
     ball.move_ip(vx, vy)
@@ -81,8 +89,7 @@ def update():
     # if ball goes below bottom wall
     if ball.top > HEIGHT:
         sounds.die.play()
-        print("Loser!")
-        exit()
+        gameover = True
 
     # reverse y velocity and play sound if ball collides with bat
     if ball.colliderect(bat):
@@ -110,8 +117,24 @@ def update():
     if not blocks:
         # play a sound, print a message and exit
         sounds.win.play()
-        print("Winner!")
+        gameover = True
+
+    # if game over is True test for y pressed on keyboard
+    if gameover and keyboard.y:
+        # Set initial x and y velocities for the ball
+        vx = 5
+        vy = -5
+        # Set initial position for ball
+        ball.left =randint(0, WIDTH)
+        ball.top = HEIGHT/2
+        # Redraw the blocks
+        makeblocks()
+        # set gameover to False
+        gameover = False
+    # if game over is True test for n pressed on keyboard
+    elif gameover and keyboard.n:
         exit()
+
 
 # Define function draw() to refresh the screen
 def draw():
@@ -125,3 +148,9 @@ def draw():
     for block in blocks:
         screen.draw.filled_rect(block, GOLD)
 
+    if gameover:
+        # Extra instruction to exit the game
+        screen.draw.text('Play again (y) or (n)?', (30, HEIGHT - 30))
+
+# Run function makeblocks() to create the blocks
+makeblocks()
