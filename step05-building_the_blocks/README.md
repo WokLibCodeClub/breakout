@@ -58,17 +58,19 @@ The inner **for** loop begins with this code
 ```
 but make sure this line is indented from the outer **for** loop as this loop has to run *inside* the outer loop. This will set the variable **block_col** in turn to 0, 1, ..., 7. When we have set the column number we can write an almost identical sum to calculate the x coordinate of the blocks in the column (because all blocks in the same column have the same x coordinate). For the column x coordinates we want a sequence which goes 2, 102, 202, ..., 702. Use the column number, column spacing (100) and coordinate for the first column (2) to write a sum which produces this sequence.  You can adapt the simple Python code above to check you have the correct sum.
 
-#### 4. Use your calculations to make the blocks
+#### 4. Use your calculations to make blocks with the right coordinates
 
-You can now incorporate your calculations for the x and y coordinates into the code for the game. But to make the check a bit simpler there is a Python file at the top of this page called test_blocks.py which you can use. In your Python editor open a new file and copy and paste the code from test_blocks.py.
+Before you set about adding your calculations for the x and y coordinates into the code for the game try editing the Python file at the top of this page called test_blocks.py. This is a segment of the Breakout game with just the code needed for the blocks. In your Python editor open a new file and copy and paste the code from test_blocks.py.
 
 Add the code for your calculations in the lines which begin ```block_y =``` and ```block_x =``` then save the file and run it with ```pgzrun```. If your calculations are right the screen should look like this:
 
 ![alt text](blocks_in_place.png "How the blocks should look")
 
-Look carefully at how the nested for loops are arranged in this file. The code which actually makes the block rectangle is in the *inner* for loop and begins ```block = Rect(``` and uses the results of your calculations for the coordinates of the block.
+Look carefully at how the nested **for** loops are arranged in this code. The code which actually makes the block rectangle is in the *inner* for loop and begins ```block = Rect(``` and uses the results of your calculations for the coordinates of the block.
 
-The line which starts ```blocks.append``` is explained below.
+The line which starts ```blocks.append``` is explained below in section 5.
+
+The other line which is new is the line in function draw() which actually draws the blocks on the screen. That is explained below in section 8.
 
 #### 5. Adding the new block to the list of blocks (and how to remove a block from the list)
 
@@ -80,7 +82,7 @@ my_list.append(new_item)
 ```
 this will add the object called ```new_item``` onto the end of the list called ```my_list```. Think how you would adjust this code if you had a rectangle object called **block** which you wanted to add to the end of a list called **blocks**.
 
-When the ball hits one of the blocks it destroys the block, so we need a way to remove a block from the list. There is another Python method for removing an item from a list, called **pop()**. If we type:
+When the ball hits one of the blocks it destroys the block, so we need a way to *remove* a block from the list. There is another Python method for removing an item from a list, called **pop()**. If we type:
 ```
 my_list.pop(unwanted_item)
 ```
@@ -90,9 +92,13 @@ Sometimes we only know the index number of the item we want to remove from the l
 ```
 my_list.pop(my_list[3])
 ```
-In Breakout, as soon as we've made a new block with the Rect() function we need to add it to the list of blocks. In your code after the line inside the nested loops which begins ```block = Rect(``` add the correct append() instruction.
+#### 6. Adding the nested loops code to breakout.py
 
-#### 6. Destroying the blocks
+When you have the code in test_blocks.py working properly you can add the code for the nested **for** loops into your breakout.py code.
+
+Copy the code in test_blocks.py from the line beginning ```for block_row``` to the line beginning ```blocks.append(``` and paste this into breakout.py after the line ```blocks = []```.
+
+#### 7. Destroying blocks
 
 A block (which is a rectangle object) will get destroyed when it gets hit by the ball (which is another rectangle object).
 
@@ -104,7 +110,7 @@ ball.collidelist(blocks)
 ```
 This checks if the ball is colliding with any rectangle in the list called blocks, and, if it is, it gives us the index number of the block which is in the collision. If the ball isn't colliding with any of the blocks it gives us the value -1. We can use this in an **if** statement. 
 
-In the function update() there are already several if statements, so add this line under the other if statements (don't forget to indent it):
+In breakout.py in the function update() there are already several if statements, so add this line under the other if statements (don't forget to indent it):
 ```
 if ball.collidelist(blocks) >= 0:
 ```
@@ -112,10 +118,10 @@ if ball.collidelist(blocks) >= 0:
 This will be ignored if there is no collision between the ball and a block, but if there is a collision it will give us the index number of the block which has been hit.
 
 When a block is hit we want these things to happen:
- i) the block disappears - we do this by removing it from the list of blocks (see the bit about the pop() method in section 4)
+ i) the block disappears - we do this by *removing* it from the list of blocks
 ii) the y velocity of the ball gets reversed so the ball goes down if it was going up, or goes up if it was going down
 
-Under the if statement add lines of code (indented) to carry out these three tasks. You should be able to find the ways to do this on this page and in other bits of your code.
+Under the if statement add lines of code (indented) to carry out these tasks. You should be able to work out how to do this from information on this page (see the bit about the pop() method in section 5 above) and in other bits of your code you have written already.
 
 #### 7. Display the blocks
 

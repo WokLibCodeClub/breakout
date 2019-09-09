@@ -32,6 +32,6 @@ def draw():
     # clear the screen
     screen.clear()
     # draw all the blocks in the list blocks in colour GOLD
-    for block in blocks:
-        screen.draw.filled_rect(block, GOLD)
+    for block_to_draw in blocks:
+        screen.draw.filled_rect(block_to_draw, GOLD)
 
