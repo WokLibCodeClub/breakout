@@ -7,9 +7,7 @@ The blocks will be rectangle objects, and we will put all the blocks in a Python
 1. Make an empty list variable
 
    First, add this in the same part of your code where other variables (like bat, ball) are created, and before all the functions:
-   ```
-   blocks = []
-   ```
+   ```blocks = []```
 
    This line makes an empty *list* variable called **blocks**, where the blocks will be stored. 
 
@@ -37,17 +35,17 @@ The blocks will be rectangle objects, and we will put all the blocks in a Python
 
    The *outer* **for** loop will be for the row number, and the *inner* **for** loop will be for the column number. The outer loop begins with this code
    ```for block_row in range(4):```
-   This sets the value of block_row to 0, 1, 2, 3 in turn. As soon as we have set the row number we can calculate the y coordinate of the top of the row - as all the blocks in this row will have the same y coordinate. In section 2 we said we wanted the top row to have a y coordinate of 50 and for this to increase by 25 for each row, so the y coordinates for the four rows will be 50, 75, 125, 175.
+   This sets the value of block_row to 0, 1, 2, 3 in turn. As soon as we have set the row number we can calculate the y coordinate of the top of the row - as all the blocks in this row will have the same y coordinate. In section 2 (above) we said we wanted the top row to have a y coordinate of 50 and for this to increase by 25 for each row, so the y coordinates for the four rows will be 50, 75, 100, 125.
 
-   How would you write a little sum which would use the row number, and the row spacing (50), and the coordinate for the first row (25) to produce this sequence of numbers? This is a key skill in using **for** loops.
+   How would you write a little sum which would use the row number, and the row spacing (25), and the coordinate for the first row (50) to produce this sequence of numbers? This is a key skill in using **for** loops.
 
-
+   
 
 4. Try out your code to make the blocks
 
    To test out your calculations start a new Python file in your project, open the file test_blocks.py at the top of this page and copy the code into your new file. You now have to complete two lines of code, to compute the values of **block_x** and **block_y** then run this file with ```pgzrun```. If you get the calculations right the screen should look like this:
 
-![alt text](blocks_in_place.png "How the blocks should look")
+   ![alt text](blocks_in_place.png "How the blocks should look")
 
 5. Adding the new block to the list of blocks (and how to remove a block from the list)
 
