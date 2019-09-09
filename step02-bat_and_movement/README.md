@@ -2,7 +2,9 @@
 
 If you've followed the instructions in Step 1 your code should look like the code in breakout1.py on this page.
 
-#### 1. Add a variable called **bat** for the bat. This is another rectangle object of type Rect.
+#### 1. Add a variable for the bat. 
+
+   The bat is another object of type rectangle. We will put it in a variable called **bat**.
 
    A good Python rule is to place all the variables for your project together, near the top. So a good place to put this code is just after the code which adds the variable **ball**.
    ```
