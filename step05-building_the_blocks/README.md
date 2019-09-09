@@ -111,8 +111,8 @@ We use this code:
 
 This checks if the ball is colliding with any rectangle in the list called blocks, and, if it is, it gives us the index number of the block which is in the collision. If the ball isn't colliding with any of the blocks it gives us the value -1. We can use this in an **if** statement. 
 
-In breakout.py in the function update() there are already several if statements, so add this line under the other if statements (don't forget to indent it):
-```
+In breakout.py in the function update() there are already several if statements, so add this line under the other if statements (don't forget to indent it to line up with the other if statements):
+```python
     if ball.collidelist(blocks) >= 0:
 ```
 
