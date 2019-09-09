@@ -8,7 +8,7 @@ The blocks will be rectangle objects, and we will put all the blocks in a Python
 
 First, add this in the same part of your code where other variables (like bat, ball) are created, and before all the functions:
 
-```blocks = []```
+`blocks = []`
 
 This line makes an empty *list* variable called **blocks**, where the blocks will be stored. 
 
@@ -36,7 +36,7 @@ We want to make 32 blocks arranged in four rows and eight columns. In Python we 
 
 The *outer* **for** loop will be for the row number, and the *inner* **for** loop will be for the column number. The outer loop begins with this code
 
-```for block_row in range(4):```
+`for block_row in range(4):`
 
 This sets the value of **block_row** to 0, 1, 2, 3 in turn. As soon as we have set the row number we can calculate the y coordinate of the top of the row - as all the blocks in this row will have the same y coordinate. In section 2 (above) we said we wanted the top row to have a y coordinate of 50 and for this to increase by 25 for each row, so the y coordinates for the four rows will be 50, 75, 100, 125.
 
@@ -53,9 +53,9 @@ for block_row in range(4):
 Save the code and run it. If your calculations are right it will print the numbers 50, 75, 100, 125, each on a separate row. If it doesn't work first time keep adjusting your calculation until you get it to print the correct sequence. When you get this right you will have learned a key skill in using **for** loops.
 
 The inner **for** loop begins with this code
-```
+`
     for block_col in range(8):
-```
+`
 but make sure this line is indented from the outer **for** loop as this loop has to run *inside* the outer loop. This will set the variable **block_col** in turn to 0, 1, ..., 7. When we have set the column number we can calculate the x coordinate of the blocks in that column (because all blocks in the same column have the same x coordinate). For the x coordinates of columns 0 to 7 we want a sequence which goes 2, 102, 202, ..., 702. Use the column number, column spacing (100) and x coordinate for the first column (2) to write an almost identical sum which produces this sequence.  You can adapt the simple Python code above to check you have the correct sum.
 
 #### 4. Use your calculations to make blocks on the screen
