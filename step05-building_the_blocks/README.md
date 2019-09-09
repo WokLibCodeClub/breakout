@@ -106,15 +106,15 @@ A block (which is a rectangle object) will get destroyed when it gets hit by the
 In [step 4](../step04-bat_on_ball) we saw the Pygame Zero function for checking if two rectangles are colliding. We could use this again to check if the ball was colliding with one of the blocks but we would have to check this for every single block. Luckily Pygame Zero has another function to check if a rectangle is colliding with any one of the rectangles in a list. The function is **collidelist()**.
 
 We use this code:
-```
-ball.collidelist(blocks)
-```
+
+`ball.collidelist(blocks)`
+
 This checks if the ball is colliding with any rectangle in the list called blocks, and, if it is, it gives us the index number of the block which is in the collision. If the ball isn't colliding with any of the blocks it gives us the value -1. We can use this in an **if** statement. 
 
 In breakout.py in the function update() there are already several if statements, so add this line under the other if statements (don't forget to indent it):
-```
-if ball.collidelist(blocks) >= 0:
-```
+
+`    if ball.collidelist(blocks) >= 0:`
+
 
 This will be ignored if there is no collision between the ball and a block, but if there is a collision it will give us the index number of the block which has been hit.
 
