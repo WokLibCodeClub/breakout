@@ -4,7 +4,7 @@
 
    In the location where you store your Python coding make a new folder called breakout to hold all your code and any other resources you will need for this project.
 
-#### 2. Navigate the terminal window to this new folder.
+#### 2. Navigate the terminal window to this new folder
 
    Open a terminal window and make sure the folder shown in this window is the folder of your Breakout project. You can use the command **cd** to change the directory of the terminal window, and **dir** to look at the contents of the current directory. If your terminal window is showing the wrong disk drive (the first character on each terminal line) then change the disk drive by typing the letter of the disk drive followed by a colon. For example, if your project is on a memory stick, drive G:, then you would type **G:** in the terminal to change to this disk drive.
 
@@ -12,9 +12,9 @@
 
 #### 3. Using your Python editor create a new empty file and save it as breakout.py
 
-#### 4. Set up the game window
+#### 4. Write code to set up the game window
 
-   The first steps are to specify the size of the game window. You can also give it a title. When run with Pygame Zero this code will control properties of the game window (the width and height of the window are in pixels):
+   The first lines of code in your project are to specify the size of the game window. You can also give it a title. When run with Pygame Zero this code will control properties of the game window (the width and height of the window are in pixels):
 
    ```
    TITLE = 'Breakout'
