@@ -125,8 +125,7 @@ def update():
         vx = 5
         vy = -5
         # Set initial position for ball
-        ball.left =randint(0, WIDTH)
-        ball.top = HEIGHT/2
+        ball.topleft =(randint(0, WIDTH), HEIGHT/2)
         # Redraw the blocks
         makeblocks()
         # set gameover to False
@@ -149,7 +148,7 @@ def draw():
         screen.draw.filled_rect(block, GOLD)
 
     if gameover:
-        # Extra instruction to exit the game
+        # Ask user whether to play again
         screen.draw.text('Play again (y) or (n)?', (30, HEIGHT - 30))
 
 # Run function makeblocks() to create the blocks

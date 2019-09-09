@@ -24,15 +24,32 @@ If you fancy playing the game more than once it's a bit annoying to have to rest
 
 Luckily it is not too difficult to add code to ask the player whether or not they want to play again. There are several stages to doing this.
 1. Make a global variable called **gameover** and set it to False
+
    `gameover = False`
+
    Place this with the other global variables near the top of the code.
    Delete the line which prints "Loser!" at the terminal.
 
 2. The variable gameover will only be True when the player either wins or loses.
    Inside the if statement which checks for winning add
+
    `gameover = True`
+
    Add the same inside the if statement which checks for losing.
    Delete the line which prints "Winner!" at the terminal.
+
+3. At the end of function draw() add this code:
+
+```python
+    if gameover:
+        # Ask user whether to play again
+        screen.draw.text('Play again (y) or (n)?', (30, HEIGHT - 30))
+```
+   This will be ignored if gameover is False (game in progress) but if the game has stopped this will cause the text "Play again (y) or (n)?" to be written on the screen at the bottom left corner.
+   The text will stay there until gameover is reset to False.
+
+4. Make the code for creating the blocks into a function
+   Before we start the game we need to create and draw the blocks. If we lose or win and want to play again we need to draw all the blocks again. To avoid writing exactly the same code twice we will turn this code into a function, then whenever we want to redraw the blocks we simply call the function.
 
 #### 3. Let the bat give the ball some spin
 
