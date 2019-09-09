@@ -34,16 +34,34 @@ The blocks will be rectangle objects, and we will put all the blocks in a Python
    We want to make 32 blocks arranged in four rows and eight columns. In Python we will number the rows from the top 0, 1, 2, 3, and the columns from the left 0, 1, 2, 3, 4, 5, 6, 7. We will use two variables: **block_row** for the row number and **block_col** for the column number.
 
    The *outer* **for** loop will be for the row number, and the *inner* **for** loop will be for the column number. The outer loop begins with this code
+
    ```for block_row in range(4):```
+
    This sets the value of block_row to 0, 1, 2, 3 in turn. As soon as we have set the row number we can calculate the y coordinate of the top of the row - as all the blocks in this row will have the same y coordinate. In section 2 (above) we said we wanted the top row to have a y coordinate of 50 and for this to increase by 25 for each row, so the y coordinates for the four rows will be 50, 75, 100, 125.
 
-   How would you write a little sum which would use the row number, and the row spacing (25), and the coordinate for the first row (50) to produce this sequence of numbers? This is a key skill in using **for** loops.
+   Now you need to write a little sum which would use the row number, and the row spacing (25), and the coordinate for the first row (50) to produce this sequence of numbers. How would you do this? 
 
-   
+   (Hint: it involves multiplication and addition.)
+
+   You can try out your calculation by writing a very simple Python programme (in a new file) and printing the results. This doesn't need pgzrun, you can just run it in normal Python. Put this code in a new file:
+   ```
+   for block_row in range(4):
+      block_y =         # here you put in your sum using block_row, and 25 and 50
+      print(block_y)
+   ```
+   If it doesn't work first time keep adjusting your calculation until you get it to print the sequence 50, 75, 100, 125. When you get this right you will have learned a key skill in using **for** loops.
+
+
+   The inner loop begins with this code
+
+   ```    for block_col in range(8):```
+
+   but make sure this line is indented from the outer for loop as this loop has to run *inside* the outer loop. This will set the variable block_col in turn to 0, 1, ..., 7. When we have set the column number we can write an almost identical sum to calculate the x coordinate of the blocks in the column, (as all blocks in the same column have the same x coordinate). Use the column number, column spacing (100) and coordinate for the first column (2) to produce a sequence which goes 2, 102, 202, ..., 702.
+
 
 4. Try out your code to make the blocks
 
-   To test out your calculations start a new Python file in your project, open the file test_blocks.py at the top of this page and copy the code into your new file. You now have to complete two lines of code, to compute the values of **block_x** and **block_y** then run this file with ```pgzrun```. If you get the calculations right the screen should look like this:
+   To test out your code for the blocks without calculations start a new Python file in your project, open the file test_blocks.py at the top of this page and copy the code into your new file. You now have to complete two lines of code, to compute the values of **block_x** and **block_y** then run this file with ```pgzrun```. If you get the calculations right the screen should look like this:
 
    ![alt text](blocks_in_place.png "How the blocks should look")
 

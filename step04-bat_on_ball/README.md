@@ -23,7 +23,6 @@ The code in breakout3.py on this page shows the project so far, except you will 
 
 Challenge:
 ==========
-
 Is the game a bit slow? What would you change to speed it up?
 
 [Go to step 5](../step05-building_the_blocks)
