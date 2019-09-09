@@ -114,8 +114,11 @@ We need to measure how fast the bat is moving, and we can do this inside functio
    Inside function update() add oldbatx to the list of global variables at the top of this function.
 
 2. Add the code in function update() to calculate the bat velocity and put it in a variable called batvel.
+
    `batvel = bat.centerx - oldbatx`
+
    So that the function can measure the new bat velocity next time through we need to put the present x position of the bat into the variable oldbatx:
+   
    `oldbatx = bat.centerx`
 
 3. 
