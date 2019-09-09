@@ -2,7 +2,7 @@
 
 If you've followed the instructions in Step 1 your code should look like the code in breakout1.py on this page.
 
-#### 1. Add a variable for the bat. 
+#### 1. Add a variable for the bat
 
    The bat is another object of type rectangle. We will put it in a variable called **bat**.
 
@@ -14,15 +14,21 @@ If you've followed the instructions in Step 1 your code should look like the cod
 
    The width of the bat is 120 pixels and the height is only 15 pixels, so this will be a short wide rectangle.
 
-#### 2. Modify the draw function to draw the bat by adding this line at the end of the draw function. **Don't forget to indent this line otherwise Python won't know it's part of the draw() function!**
+#### 2. Modify the draw function
+
+   To show the bat in the window we need to add this line at the end of function draw(). **Don't forget to indent this line otherwise Python won't know it's part of the draw() function!**
    ```
    screen.draw.filled_rect(bat, RED)
    ```
    This time we have used the variable RED to specify the colour to fill the rectangle. This variable tells Pygame Zero to add 200 units of red and no blue or green, which will produce a red colour.
 
-#### 3. Save your code and run it to check that the bat is now displayed
+#### 3. Save your code and run it
 
-#### 4. We need a way to control the position of the bat. We will do this by moving the mouse.
+   Check that the bat is now displayed.
+
+#### 4. Moving the bat
+
+   We need a way to control the position of the bat. We will do this by moving the mouse.
 
    In your code before function draw() define a new function called **on_mouse_move()**. This is a special Pygame Zero function which constantly checks the position of the mouse pointer in the game window, and puts the position in a variable called **pos**.
 
@@ -53,5 +59,7 @@ If you've followed the instructions in Step 1 your code should look like the cod
    Whenever you move the mouse pointer this function updates the variable **pos** and takes the x coordinate of the mouse and sets the x coordinate of the bat to be the same. Try it and see it working!
 
 #### 5. Save and test your code.
+
+   Does the bat move as you move the mouse pointer?
 
 [Go to step 3](../step03-move_the_ball)
