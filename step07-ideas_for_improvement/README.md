@@ -42,6 +42,7 @@ Luckily it is not too difficult to add code to ask the player whether or not the
    
 
 3. Prevent sounds playing repeatedly when game ends
+
    We need to put in some extra control to avoid the sounds playing repeatedly at the end of the game. If the player has lost then the y coordinate of the top of the ball is greater than HEIGHT. Even though the game has stopped this will still be true, so every time the update() function tests for this it will play the die.wav sound. To stop this we can change the **if** statement slightly:
 
    ```if ball.top > HEIGHT and not gameover:```
@@ -112,7 +113,7 @@ Luckily it is not too difficult to add code to ask the player whether or not the
 
 #### 3. Let the bat give the ball some spin
 
-The original arcade game allowed the player to put spin on the ball by moving the bat sideways as it hit the ball. This would change the direction of the ball after the hit. We can add this feature as well.
+Some versions of the original arcade game allowed the player to put spin on the ball by moving the bat sideways as it hit the ball. This would change the direction of the ball after the hit. We can add this feature as well.
 
 We need to measure how fast the bat is moving, and we can do this inside function update(). Function update() runs repeatedly so if we measure the bat's x position then remeasure it the next time through function update() then the difference should show how fast the bat is moving.
 
