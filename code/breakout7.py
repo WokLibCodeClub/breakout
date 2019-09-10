@@ -18,7 +18,7 @@ GOLD = (205, 145, 0)
 
 # Define a rectangle object variable for the ball
 # and set initial x position to a random number between 0 and WIDTH
-ball = Rect(randint(20, WIDTH-50), HEIGHT/2, 30, 30)
+ball = Rect(randint(20, WIDTH - 50), HEIGHT/2, 30, 30)
 # Set initial x and y velocities for the ball
 vx = 5
 vy = -5
@@ -113,7 +113,6 @@ def update():
     # If the ball hits one of the blocks ball.collidelist(blocks)
     # will give the index number of the hit block in the blocks list
     # otherwise it will be set it to -1
-
     if ball.collidelist(blocks) >= 0: # this means one of the blocks has been hit
         # play a sound
         sounds.block.play()
@@ -141,7 +140,7 @@ def update():
         vx = 5
         vy = -5
         # Set initial position for ball
-        ball.topleft =(randint(20, WIDTH-50), HEIGHT/2)
+        ball.topleft =(randint(20, WIDTH - 50), HEIGHT/2)
         # Redraw the blocks
         makeblocks()
         # set gameover to False
