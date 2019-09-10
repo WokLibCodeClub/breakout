@@ -39,7 +39,7 @@ To get the sounds you need for this game:
 
 1. in your project folder make a folder called sounds
 
-2. look at the top of this webpage for a folder icon labelled sounds and click on the icon. It will go to a new webpage where you will see four sound files. *For each file* click on the filename then in the new webpage click on the button at the right hand side labelled Download, and save the file in your new sounds folder. (After you download one file you will need to use the back button on your browser to get back to the list of files to get the next one.)
+2. look at the top of this webpage for a folder icon labelled sounds and click on the icon. It will go to a new webpage where you will see five sound files. *For each file* click on the filename then in the new webpage click on the button at the right hand side labelled Download, and save the file in your new sounds folder. (After you download one file you will need to use the back button on your browser to get back to the list of files to get the next one.)
 
 Now we need to write code to use these sound files.
 
