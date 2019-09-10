@@ -8,11 +8,11 @@ The bat is another object of type rectangle. We will put it in a variable called
 
 A good Python rule is to place all the variables for your project together, near the top. So a good place to put this code is just after the code which adds the variable **ball**.
 ```
-bat = Rect(WIDTH/2, 0.9 * HEIGHT, 120, 15)
+bat = Rect(WIDTH/2, HEIGHT - 50, 100, 15)
 ```
-The x coordinate is WIDTH/2 and the y coordinate is 9/10ths of the variable HEIGHT. Where do you think this will place the bat? 
+The x coordinate is WIDTH/2 and the y coordinate is 50 pixels less than the value of the variable HEIGHT. Where do you think this will place the bat? 
 
-The width of the bat is 120 pixels and the height is only 15 pixels, so this will be a short wide rectangle.
+The width of the bat is 100 pixels and the height is only 15 pixels, so this will be a short wide rectangle.
 
 #### 2. Modify the draw function
 

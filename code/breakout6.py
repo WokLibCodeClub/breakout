@@ -23,7 +23,7 @@ vy = -5
 speed_up = 1.05
 
 # Define rectangle object variable for the bat
-bat = Rect(WIDTH/2, 0.9 * HEIGHT, 120, 15)
+bat = Rect(WIDTH/2, HEIGHT - 50, 100, 15)
 
 # Generate a list of rectangle objects for the blocks
 # Create an empty list variable called blocks
@@ -65,13 +65,20 @@ def update():
     # move the ball by distance vx and vy in x and y directions
     ball.move_ip(vx, vy)
 
-    # reverse x velocity if ball hits left or right wall
-    if ball.right > WIDTH or ball.left <= 0:
-        vx = -vx
+    # reverse x velocity if ball hits left wall
+    if ball.left <= 0:
+        vx = abs(vx)
+        sounds.wall.play()
+
+    # reverse x velocity if ball hits right wall
+    if ball.right > WIDTH:
+        vx = -abs(vx)
+        sounds.wall.play()
 
     # reverse y velocity if ball hits top wall
     if ball.top <= 0:
-        vy = -vy
+        vy = -abs(vy)
+        sounds.wall.play()
 
     # play sound, print message and exit game 
     # if ball goes below bottom wall
@@ -82,8 +89,8 @@ def update():
 
     # reverse y velocity and play sound if ball collides with bat
     if ball.colliderect(bat):
-        sounds.blip.play()
-        vy = -vy
+        sounds.bat.play()
+        vy = -abs(vy)
 
         # increase x and y velocity if ball hits bat
         vy = vy * speed_up

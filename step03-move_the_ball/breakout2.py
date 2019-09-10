@@ -17,7 +17,7 @@ GOLD = (205, 145, 0)
 ball = Rect(WIDTH/2, HEIGHT/2, 30, 30)
 
 # Define rectangle object variable for the bat
-bat = Rect(WIDTH/2, 0.9 * HEIGHT, 120, 15)
+bat = Rect(WIDTH/2, HEIGHT - 50, 100, 15)
 
 
 # Detect movement of mouse pointer and  set the centre of the 

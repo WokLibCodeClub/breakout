@@ -20,7 +20,7 @@ vx = 2
 vy = -2
 
 # Define rectangle object variable for the bat
-bat = Rect(WIDTH / 2, 0.9 * HEIGHT, 120, 15)
+bat = Rect(WIDTH/2, HEIGHT - 50, 100, 15)
 
 
 # Detect movement of mouse pointer and  set the centre of the 
@@ -38,8 +38,12 @@ def update():
     # move the ball by distance vx and vy in x and y directions
     ball.move_ip(vx, vy)
 
-    # reverse x velocity if ball hits left or right wall
-    if ball.right > WIDTH or ball.left <= 0:
+    # reverse x velocity if ball hits left wall
+    if ball.left <= 0:
+        vx = -vx
+
+    # reverse x velocity if ball hits right wall
+    if ball.right > WIDTH:
         vx = -vx
 
     # reverse y velocity if ball hits top wall

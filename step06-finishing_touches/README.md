@@ -43,18 +43,25 @@ To get the sounds you need for this game:
 
 Now we need to write code to use these sound files.
 
-We will use the sound blip.wav whenever the ball hits the bat.
+We will use the sound bat.wav whenever the ball hits the bat.
 
 - Find the line in your code where there is an if block which tests for a collision between the bat and the ball.
 - At the end of this if block add
   
-  `sounds.blip.play()`
+  `sounds.bat.play()`
   
-  This is the Pygame Zero command to play the file blip.wav. (Make sure you indent this code to line up with the other statement inside the if block.)
+  This is the Pygame Zero command to play the file bat.wav. (Make sure you indent this code to line up with the other statement inside the if block.)
 
+We will use the sound wall.wav whenever the ball hits the side or the top walls
+
+- Find the lines in your code where you test if the ball is about to go off the edges or the top of the game window.
+- At the end of these three if blocks add
+  
+  `sounds.wall.play()`
+  
 We will use the sound block.wav whenever the ball hits one of the blocks
 
-- Find the line in your code where there is an if block which tests for a collision between the bat and any block.
+- Find the line in your code where there is an if statement which tests for a collision between the bat and any block.
 - At the end of this if block add
   
   `sounds.block.play()`

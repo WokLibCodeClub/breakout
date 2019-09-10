@@ -12,9 +12,9 @@ To do this we have to import the Python function to generate random integers fro
 
 One way to use this is by changing the declaration of the ball variable to something like
 
-`ball = Rect(randint(0, WIDTH), HEIGHT/2, 30, 30)`
+`ball = Rect(randint(20, WIDTH - 50), HEIGHT/2, 30, 30)`
 
-In this example the ball's initial x coordinate is set to a random integer between 0 and the width of the window, while the initial y coordinate is fixed at half way up the window. This will ensure the ball starts from a different position when you play the game again.
+In this example the ball's initial x coordinate is set to a random integer between 20 pixels from the left edge and 50 pixels from the right edge of the window, while the initial y coordinate is fixed at half way up the window. This will ensure the ball starts from a different position when you play the game again.
 
 There are lots of possible variations - having another `randint` function for the y coordinate, or introducing a random element into **vx** and **vy** so the ball's initial direction of travel can vary.
 
@@ -41,7 +41,16 @@ Luckily it is not too difficult to add code to ask the player whether or not the
    Add the same code inside the if statement which checks for losing. Delete the line which prints "Loser!" at the terminal, and delete the line which exits the programme.
    
 
-3. At the end of function draw() add this code:
+3. Prevent sounds playing repeatedly when game ends
+   We need to put in some extra control to avoid the sounds playing repeatedly at the end of the game. If the player has lost then the y coordinate of the top of the ball is greater than HEIGHT. Even though the game has stopped this will still be true, so every time the update() function tests for this it will play the die.wav sound. To stop this we can change the **if** statement slightly:
+
+   ```if ball.top > HEIGHT and not gameover:```
+
+   With this adjusted if statement we will only trigger the sound once. After the first time the variable **gameover** will be True, so this bit of code will not be executed.
+
+   The same problem could occur if the player wins the game, or when the ball goes off the edges of the game window. Find the three **if** statements that test for the ball going outside the window and the **if** statement that checks for winning the game and for all of them add ```and not gameover``` at the end of the if line.
+
+4. At the end of function draw() add this code:
    ```python
    if gameover:
        # Ask user whether to play again
@@ -50,7 +59,7 @@ Luckily it is not too difficult to add code to ask the player whether or not the
    This will be ignored if gameover is False (game in progress) but if the game has stopped (won or lost) this will cause the text "Play again (y) or (n)?" to be written on the screen at the bottom left corner.
    The text will stay there until gameover is reset to False.
 
-4. Make all the code for creating the blocks into a function
+5. Make all the code for creating the blocks into a function
 
    Before we start the game we need to create and draw the blocks. If we lose or win and want to play again we need to draw all the blocks again. To avoid writing exactly the same code twice we will turn this code into a function, then whenever we want to redraw the blocks we simply call the function.
 
@@ -70,7 +79,7 @@ Luckily it is not too difficult to add code to ask the player whether or not the
 
    This will run the function and create the list of blocks ready for the game to start.
 
-5. Add code inside function update() to say what will happen when the player presses y or n
+6. Add code inside function update() to say what will happen when the player presses y or n
 
    We need yet another **if** statement in function update() to say what we want to happen when the player decides whether or not to play again. Here is the code for this:
 

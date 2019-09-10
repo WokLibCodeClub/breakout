@@ -18,7 +18,7 @@ GOLD = (205, 145, 0)
 
 # Define a rectangle object variable for the ball
 # and set initial x position to a random number between 0 and WIDTH
-ball = Rect(randint(0, WIDTH), HEIGHT/2, 30, 30)
+ball = Rect(randint(20, WIDTH-50), HEIGHT/2, 30, 30)
 # Set initial x and y velocities for the ball
 vx = 5
 vy = -5
@@ -30,7 +30,7 @@ speed_up = 1.05
 gameover = False
 
 # Define rectangle object variable for the bat
-bat = Rect(WIDTH/2, 0.9 * HEIGHT, 120, 15)
+bat = Rect(WIDTH/2, HEIGHT - 50, 100, 15)
 # Define a variable to hold previous bat x position
 oldbatx = 0
 
@@ -84,24 +84,34 @@ def update():
     # set oldbatx to current bat position 
     oldbatx = bat.centerx
 
-    # reverse x velocity if ball hits left or right wall
-    if ball.right > WIDTH or ball.left <= 0:
-        vx = -vx
+    # reverse x velocity if ball hits left wall
+    if ball.left <= 0 and not gameover:
+        vx = abs(vx)
+        sounds.wall.play()
+
+    # reverse x velocity if ball hits right wall
+    if ball.right > WIDTH and not gameover:
+        vx = -abs(vx)
+        sounds.wall.play()
 
     # reverse y velocity if ball hits top wall
-    if ball.top <= 0:
-        vy = -vy
+    if ball.top <= 0 and not gameover:
+        vy = -abs(vy)
+        sounds.wall.play()
 
     # play sound, set gameover to True
     # if ball goes below bottom wall
-    if ball.top > HEIGHT:
+    if ball.top > HEIGHT and gameover == False:
         sounds.die.play()
+        # Stop the ball
+        vx = 0
+        vy = 0
         gameover = True
 
     # reverse y velocity and play sound if ball collides with bat
     if ball.colliderect(bat):
-        sounds.blip.play()
-        vy = -vy
+        sounds.bat.play()
+        vy = -abs(vy)
         # change vx by an amount related to batvel
         vx = vx + batvel/5
 
@@ -123,9 +133,12 @@ def update():
 
     # test if the blocks list is now empty
     # ie all the blocks have been destroyed
-    if not blocks:
+    if not blocks and not gameover:
         # play a sound, set gameover to True
         sounds.win.play()
+        # Stop the ball
+        vx = 0
+        vy = 0
         gameover = True
 
     # if game over is True test for n pressed on keyboard
@@ -137,7 +150,7 @@ def update():
         vx = 5
         vy = -5
         # Set initial position for ball
-        ball.topleft =(randint(0, WIDTH), HEIGHT/2)
+        ball.topleft =(randint(20, WIDTH-50), HEIGHT/2)
         # Redraw the blocks
         makeblocks()
         # set gameover to False
