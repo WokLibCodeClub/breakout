@@ -32,8 +32,8 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
    You probably saw the ball disappear off the top of the window. How can we stop this happening?
 
-   When the ball gets to the top of the window its y coordinate will be equal to zero (in Pygame Zero y coordinates start at zero at the top of the window and increase downwards). As the ball goes from side to side its x coordinate changes, so when the ball gets to the *left* edge of the window its x coordinate will be equal to zero. What would the ball's x coordinate be when it gets to the *right* edge of the window?
-
+   When the ball gets to the top of the window its y coordinate will be equal to zero (in Pygame Zero y coordinates start at zero at the top of the window and increase downwards). 
+   
    To see an diagram of the coordinate system in Pygame Zero projects look [here](https://github.com/WokLibCodeClub/LetterA/blob/master/Step1-display_letter/window.png)
 
    So to stop the ball disappearing off the top we need 
@@ -57,6 +57,8 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
    We've made the ball bounce when it hits the top wall - now to make it bounce when it hits the side walls.
    
+   As the ball goes from side to side its x coordinate changes, so when the ball gets to the *left* edge of the window its x coordinate will be equal to zero. What would the ball's x coordinate be when it gets to the *right* edge of the window?
+
    Now add two more **if** statements to function update(), one to test if the ball goes off the left edge and one to test if the ball goes off the right edge. They will look very similar to the code above but the details will be different. In both cases you will want to reverse the x velocity of the ball. Use the properties of the ball called ball.right and ball.left in your if statements.
 
 #### 7. Testing your code
