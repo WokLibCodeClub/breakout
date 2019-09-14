@@ -71,6 +71,6 @@ If you've followed the instructions in Step 2 your code should look like the cod
    
    Now save your code and run it.
 
-   Remember, we don't need to stop the ball going off the bottom of the window - in Breakout the challenge is to stop the ball going off the bottom.
+   We don't need to make the ball bounce off the bottom wall - in Breakout the challenge is to stop the ball going off the bottom of the window.
 
 [Go to step 4](../step04-bat_on_ball)
