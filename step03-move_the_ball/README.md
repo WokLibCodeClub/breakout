@@ -28,7 +28,7 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
 #### 4. Save the code and test it.
 
-#### 5. What to do if the ball goes off the edges?
+#### 5. What to do if the ball goes off the top edge?
 
    You probably saw the ball disappear off the top of the window. How can we stop this happening?
 
@@ -59,7 +59,7 @@ If you've followed the instructions in Step 2 your code should look like the cod
    
    As the ball goes from side to side its x coordinate changes, so when the ball gets to the *left* edge of the window its x coordinate will be equal to zero. What would the ball's x coordinate be when it gets to the *right* edge of the window?
 
-   Now add two more **if** statements to function update(), one to test if the ball goes off the left edge and one to test if the ball goes off the right edge. They will look very similar to the code above but the details will be different. In both cases you will want to reverse the x velocity of the ball. Use the properties of the ball called ball.right and ball.left in your if statements.
+   Now add two more **if** statements to function update(), one to test if the ball goes off the left edge and one to test if the ball goes off the right edge. They will look quite similar to the code above. In both cases you will want to reverse the x velocity of the ball - this is in variable **vx**. Use the properties of the ball called ball.right and ball.left in your if statements.
 
 #### 7. Testing your code
 
@@ -71,6 +71,6 @@ If you've followed the instructions in Step 2 your code should look like the cod
    
    Now save your code and run it.
 
-   Remember, we don't need to stop the ball going off the bottom of the window - in Breakout you lose if the ball goes off the bottom.
+   Remember, we don't need to stop the ball going off the bottom of the window - in Breakout the challenge is to stop the ball going off the bottom.
 
 [Go to step 4](../step04-bat_on_ball)
