@@ -28,7 +28,7 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
 #### 4. Save the code and test it.
 
-#### 5. What to do if the ball goes off the edge?
+#### 5. What to do if the ball goes off the edges?
 
    You probably saw the ball disappear off the top of the window. How can we stop this happening?
 
