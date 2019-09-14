@@ -36,9 +36,9 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
    To see an diagram of the coordinate system in Pygame Zero projects look [here](https://github.com/WokLibCodeClub/LetterA/blob/master/Step1-display_letter/window.png)
 
-   So to stop the ball disappearing we need 
+   So to stop the ball disappearing off the top we need 
 
-   a) an ```if``` statement to check when the ball's x coordinate becomes less than zero, and
+   a) an ```if``` statement to check when the ball's y coordinate becomes less than zero, and
 
    b) a statement which will reverse the ball's y velocity, so that instead of moving upwards it moves downwards.
 
@@ -50,9 +50,13 @@ If you've followed the instructions in Step 2 your code should look like the cod
    The first line tests if the top of the ball rectangle is at a y coordinate less than zero, the second line changes the sign of the value of variable vy.
 
    **Be careful with the indentation!** The if statement needs to be indented because it's part of function update(). The line inside the if statement needs to be indented *twice*, once because it's inside function update() and again because it's inside the if statement.
+   
+   Run your code with pgzrun to check that the ball now bounces off the top wall.
 
 #### 6. Reverse the x velocity if the ball goes off the sides
 
+   We've made the ball bounce when it hits the top wall - now to make it bounce when it hits the side walls.
+   
    Now add two more **if** statements to function update(), one to test if the ball goes off the left edge and one to test if the ball goes off the right edge. They will look very similar to the code above but the details will be different. In both cases you will want to reverse the x velocity of the ball. Use the properties of the ball called ball.right and ball.left in your if statements.
 
 #### 7. Testing your code
