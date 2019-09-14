@@ -96,7 +96,7 @@ def update():
 
     # reverse y velocity if ball hits top wall
     if ball.top <= 0 and not gameover:
-        vy = -abs(vy)
+        vy = abs(vy)
         sounds.wall.play()
 
     # play sound, set gameover to True
