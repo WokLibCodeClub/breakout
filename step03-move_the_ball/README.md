@@ -32,7 +32,7 @@ If you've followed the instructions in Step 2 your code should look like the cod
 
    You probably saw the ball disappear off the top of the window. How can we stop this happening?
 
-   When the ball gets to the top of the window its y coordinate will be equal to zero (in Pygame Zero y coordinates start at zero at the top of the window and increase downwards). 
+   When the ball gets to the top of the window its y coordinate will be equal to zero (in Pygame Zero y coordinates start at zero at the top of the window and increase downwards). As the ball goes from side to side its x coordinate changes, so when the ball gets to the *left* edge of the window its x coordinate will be equal to zero. What would the ball's x coordinate be when it gets to the *right* edge of the window?
 
    To see an diagram of the coordinate system in Pygame Zero projects look [here](https://github.com/WokLibCodeClub/LetterA/blob/master/Step1-display_letter/window.png)
 
