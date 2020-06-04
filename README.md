@@ -1,6 +1,6 @@
 # breakout
 
-This is a version of the old arcade video game *Breakout*. You can see an example of what the game looked like [here](https://www.youtube.com/watch?v=eaCY6QQZVEc).
+This is a version of the old arcade video game *Breakout*. You can see an example of what the original game looked like in 1976  [here](https://www.youtube.com/watch?v=eaCY6QQZVEc) and [here](https://youtu.be/tlKy9UhZKzk).
 
 The code you write for this project will run using the Python extension library called **Pygame Zero**.
 
